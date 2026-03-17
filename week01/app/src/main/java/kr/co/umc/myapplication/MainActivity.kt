@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // 정적 UI 세팅
+        // 정적 UI 및 클릭리스너 세팅
         with(binding) {
             with(lyHappy) {
                 ivMood.setImageResource(R.drawable.happy)
@@ -69,6 +69,7 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    // 상태를 구독하고 ui에 반영하는 함수
     private fun observeSelectedEmotionState() {
         lifecycleScope.launch {
             viewModel.selectedEmotionState.collect { state ->
