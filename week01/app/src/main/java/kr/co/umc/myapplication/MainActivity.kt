@@ -74,7 +74,7 @@ class MainActivity : AppCompatActivity() {
             viewModel.selectedEmotionState.collect { state ->
                 when(state) {
                     is SelectedState.Happy -> {
-                        binding.lyHappy.tvMood.setTextColor(Color.YELLOW)
+                        binding.lyHappy.tvMood.setTextColor(getColor(R.color.happy_yellow))
 
                         binding.lyExciting.tvMood.setTextColor(Color.BLACK)
                         binding.lyIdle.tvMood.setTextColor(Color.BLACK)
@@ -82,7 +82,7 @@ class MainActivity : AppCompatActivity() {
                         binding.lyAngry.tvMood.setTextColor(Color.BLACK)
                     }
                     is SelectedState.Exciting -> {
-                        binding.lyExciting.tvMood.setTextColor(Color.CYAN)
+                        binding.lyExciting.tvMood.setTextColor(getColor(R.color.exciting_blue))
 
                         binding.lyHappy.tvMood.setTextColor(Color.BLACK)
                         binding.lyIdle.tvMood.setTextColor(Color.BLACK)
@@ -90,7 +90,7 @@ class MainActivity : AppCompatActivity() {
                         binding.lyAngry.tvMood.setTextColor(Color.BLACK)
                     }
                     is SelectedState.Idle -> {
-                        binding.lyIdle.tvMood.setTextColor(Color.BLUE)
+                        binding.lyIdle.tvMood.setTextColor(getColor(R.color.idle_blue))
 
                         binding.lyHappy.tvMood.setTextColor(Color.BLACK)
                         binding.lyExciting.tvMood.setTextColor(Color.BLACK)
@@ -98,7 +98,7 @@ class MainActivity : AppCompatActivity() {
                         binding.lyAngry.tvMood.setTextColor(Color.BLACK)
                     }
                     is SelectedState.Worry -> {
-                        binding.lyWorry.tvMood.setTextColor(Color.GREEN)
+                        binding.lyWorry.tvMood.setTextColor(getColor(R.color.worry_green))
 
                         binding.lyHappy.tvMood.setTextColor(Color.BLACK)
                         binding.lyExciting.tvMood.setTextColor(Color.BLACK)
@@ -106,7 +106,7 @@ class MainActivity : AppCompatActivity() {
                         binding.lyAngry.tvMood.setTextColor(Color.BLACK)
                     }
                     is SelectedState.Angry -> {
-                        binding.lyAngry.tvMood.setTextColor(Color.RED)
+                        binding.lyAngry.tvMood.setTextColor(getColor(R.color.angry_red))
 
                         binding.lyHappy.tvMood.setTextColor(Color.BLACK)
                         binding.lyExciting.tvMood.setTextColor(Color.BLACK)
