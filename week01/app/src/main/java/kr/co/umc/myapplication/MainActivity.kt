@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // 정적 UI 및 클릭리스너 세팅
+        // 정적 UI 및 클릭리스너 세팅ㅇ
         with(binding) {
             with(lyHappy) {
                 ivMood.setImageResource(R.drawable.happy)
