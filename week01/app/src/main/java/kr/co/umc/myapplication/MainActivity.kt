@@ -16,7 +16,6 @@ import kr.co.umc.myapplication.presentation.Exciting
 import kr.co.umc.myapplication.presentation.Happy
 import kr.co.umc.myapplication.presentation.Idle
 import kr.co.umc.myapplication.presentation.MainViewModel
-import kr.co.umc.myapplication.presentation.SelectedState
 import kr.co.umc.myapplication.presentation.Unselected
 import kr.co.umc.myapplication.presentation.Worry
 
@@ -36,31 +35,41 @@ class MainActivity : AppCompatActivity() {
 
         _binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // 정적 UI 및 클릭리스너 세팅ㅇ
+        // 정적 UI 및 클릭리스너 세팅
         with(binding) {
             with(lyHappy) {
-                ivMood.setImageResource(R.drawable.happy)
-                ivMood.setOnClickListener { viewModel.onSelect(Happy)}
+                ivMood.apply {
+                    setImageResource(R.drawable.happy)
+                    setOnClickListener { viewModel.onSelect(Happy)}
+                }
                 tvMood.setText(R.string.very_happy)
             }
             with(lyExciting) {
-                ivMood.setImageResource(R.drawable.exciting)
-                ivMood.setOnClickListener { viewModel.onSelect(Exciting) }
+                ivMood.apply {
+                    setImageResource(R.drawable.exciting)
+                    setOnClickListener { viewModel.onSelect(Exciting) }
+                }
                 tvMood.setText(R.string.very_exciting)
             }
             with(lyIdle) {
-                ivMood.setImageResource(R.drawable.idle)
-                ivMood.setOnClickListener { viewModel.onSelect(Idle) }
+                ivMood.apply {
+                    setImageResource(R.drawable.idle)
+                    setOnClickListener { viewModel.onSelect(Idle) }
+                }
                 tvMood.setText(R.string.just_idle)
             }
             with(lyWorry) {
-                ivMood.setImageResource(R.drawable.worry)
-                ivMood.setOnClickListener { viewModel.onSelect(Worry) }
+                ivMood.apply {
+                    setImageResource(R.drawable.worry)
+                    setOnClickListener { viewModel.onSelect(Worry) }
+                }
                 tvMood.setText(R.string.very_worry)
             }
             with(lyAngry) {
-                ivMood.setImageResource(R.drawable.angry)
-                ivMood.setOnClickListener { viewModel.onSelect(Angry) }
+                ivMood.apply{
+                    setImageResource(R.drawable.angry)
+                    setOnClickListener { viewModel.onSelect(Angry) }
+                }
                 tvMood.setText(R.string.very_angry)
             }
         }
@@ -78,54 +87,23 @@ class MainActivity : AppCompatActivity() {
     // 상태를 구독하고 ui에 반영하는 함수
     private fun observeSelectedEmotionState() {
         lifecycleScope.launch {
-            viewModel.selectedEmotionState.collect { state: SelectedState ->
-                when(state) {
-                    is Happy -> {
-                        binding.lyHappy.tvMood.setTextColor(getColor(R.color.happy_yellow))
+            viewModel.selectedEmotionState.collect { state ->
 
-                        binding.lyExciting.tvMood.setTextColor(Color.BLACK)
-                        binding.lyIdle.tvMood.setTextColor(Color.BLACK)
-                        binding.lyWorry.tvMood.setTextColor(Color.BLACK)
-                        binding.lyAngry.tvMood.setTextColor(Color.BLACK)
-                    }
-                    is Exciting -> {
-                        binding.lyExciting.tvMood.setTextColor(getColor(R.color.exciting_blue))
-
-                        binding.lyHappy.tvMood.setTextColor(Color.BLACK)
-                        binding.lyIdle.tvMood.setTextColor(Color.BLACK)
-                        binding.lyWorry.tvMood.setTextColor(Color.BLACK)
-                        binding.lyAngry.tvMood.setTextColor(Color.BLACK)
-                    }
-                    is Idle -> {
-                        binding.lyIdle.tvMood.setTextColor(getColor(R.color.idle_blue))
-
-                        binding.lyHappy.tvMood.setTextColor(Color.BLACK)
-                        binding.lyExciting.tvMood.setTextColor(Color.BLACK)
-                        binding.lyWorry.tvMood.setTextColor(Color.BLACK)
-                        binding.lyAngry.tvMood.setTextColor(Color.BLACK)
-                    }
-                    is Worry -> {
-                        binding.lyWorry.tvMood.setTextColor(getColor(R.color.worry_green))
-
-                        binding.lyHappy.tvMood.setTextColor(Color.BLACK)
-                        binding.lyExciting.tvMood.setTextColor(Color.BLACK)
-                        binding.lyIdle.tvMood.setTextColor(Color.BLACK)
-                        binding.lyAngry.tvMood.setTextColor(Color.BLACK)
-                    }
-                    is Angry -> {
-                        binding.lyAngry.tvMood.setTextColor(getColor(R.color.angry_red))
-
-                        binding.lyHappy.tvMood.setTextColor(Color.BLACK)
-                        binding.lyExciting.tvMood.setTextColor(Color.BLACK)
-                        binding.lyIdle.tvMood.setTextColor(Color.BLACK)
-                        binding.lyWorry.tvMood.setTextColor(Color.BLACK)
-                    }
-                    is Unselected -> {
-                        binding.lyHappy.tvMood.setTextColor(Color.BLACK)
-                        binding.lyExciting.tvMood.setTextColor(Color.BLACK)
-                        binding.lyIdle.tvMood.setTextColor(Color.BLACK)
-                        binding.lyWorry.tvMood.setTextColor(Color.BLACK)
-                        binding.lyAngry.tvMood.setTextColor(Color.BLACK)
+                // 기본값: 모두 블랙
+                with(binding) {
+                    lyHappy.tvMood.setTextColor(Color.BLACK)
+                    lyExciting.tvMood.setTextColor(Color.BLACK)
+                    lyIdle.tvMood.setTextColor(Color.BLACK)
+                    lyWorry.tvMood.setTextColor(Color.BLACK)
+                    lyAngry.tvMood.setTextColor(Color.BLACK)
+                    // 상태별 색 적용
+                    when (state) {
+                        is Happy -> lyHappy.tvMood.setTextColor(getColor(R.color.happy_yellow))
+                        is Exciting -> lyExciting.tvMood.setTextColor(getColor(R.color.exciting_blue))
+                        is Idle -> lyIdle.tvMood.setTextColor(getColor(R.color.idle_blue))
+                        is Worry -> lyWorry.tvMood.setTextColor(getColor(R.color.worry_green))
+                        is Angry -> lyAngry.tvMood.setTextColor(getColor(R.color.angry_red))
+                        is Unselected -> { }
                     }
                 }
             }
