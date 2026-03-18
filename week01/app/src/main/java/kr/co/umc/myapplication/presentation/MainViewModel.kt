@@ -8,16 +8,12 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MainViewModel @Inject constructor() : ViewModel() {
-    private val _selectedEmotionState = MutableStateFlow<SelectedState?>(null)
+    private val _selectedEmotionState = MutableStateFlow<SelectedState>(Unselected)
     val selectedEmotionState = _selectedEmotionState.asStateFlow()
-
-    init {
-        _selectedEmotionState.value = SelectedState.Unselected
-    }
 
     fun onSelect(state: SelectedState) {
         _selectedEmotionState.value =
-            if (_selectedEmotionState.value == state) SelectedState.Unselected else state
+            if (_selectedEmotionState.value == state) Unselected else state
 
     }
 
