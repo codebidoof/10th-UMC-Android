@@ -5,6 +5,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.setupWithNavController
 import kr.co.umc.nike.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -28,6 +30,12 @@ class MainActivity : AppCompatActivity() {
             binding.mainBnv.setPadding(0, 0, 0, systemBars.bottom)
             insets
         }
+
+        // 바텀 내비게이션 세팅
+        val navController = supportFragmentManager
+            .findFragmentById(R.id.fragment_container)!!
+            .findNavController()
+        binding.mainBnv.setupWithNavController(navController)
     }
 
     override fun onDestroy() {
