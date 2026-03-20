@@ -22,7 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         ViewCompat.setOnApplyWindowInsetsListener(binding.main) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
+            // 루트엔 top/side만
+            v.setPadding(systemBars.left, systemBars.top, systemBars.right, 0)
+            // BottomNav엔 bottom만
+            binding.mainBnv.setPadding(0, 0, 0, systemBars.bottom)
             insets
         }
     }
