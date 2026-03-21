@@ -39,7 +39,6 @@ class BagFragment : Fragment() {
                         .setPopUpTo(R.id.menu_bag, true)
                         .build()
                     )
-
             }
         }
     }

@@ -36,7 +36,10 @@ class MainActivity : AppCompatActivity() {
             .findFragmentById(R.id.fragment_container)!!
             .findNavController()
         binding.mainBnv.setupWithNavController(navController)
+
     }
+
+
 
     override fun onDestroy() {
         super.onDestroy()
