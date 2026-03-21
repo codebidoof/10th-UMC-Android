@@ -3,31 +3,35 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/bottom_navigation"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/menu_home">
 
     <fragment
-        android:id="@+id/homeFragment"
+        android:id="@+id/menu_home"
         android:name="kr.co.umc.nike.ui.HomeFragment"
-        tools:layout="@layout/fragment_home"/>
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
 
     <fragment
-        android:id="@+id/buyFragment"
+        android:id="@+id/menu_buy"
         android:name="kr.co.umc.nike.ui.BuyFragment"
         tools:layout="@layout/fragment_buy"/>
 
     <fragment
-        android:id="@+id/wishFragment"
+        android:id="@+id/menu_wish"
         android:name="kr.co.umc.nike.ui.WishFragment"
         tools:layout="@layout/fragment_wish"/>
 
     <fragment
-        android:id="@+id/bagFragment"
+        android:id="@+id/menu_bag"
         android:name="kr.co.umc.nike.ui.BagFragment"
         tools:layout="@layout/fragment_bag"/>
 
     <fragment
-        android:id="@+id/profileFragment"
+        android:id="@+id/menu_profile"
         android:name="kr.co.umc.nike.ui.ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
 
 </navigation>
+
+
