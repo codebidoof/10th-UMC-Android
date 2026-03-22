@@ -5,7 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavOptions
+import androidx.navigation.navOptions
 import androidx.navigation.fragment.findNavController
 import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentBagBinding
@@ -35,10 +35,10 @@ class BagFragment : Fragment() {
                 findNavController().navigate(
                     R.id.menu_buy,
                     null,
-                    NavOptions.Builder()
-                        .setPopUpTo(R.id.menu_bag, true)
-                        .build()
-                    )
+                    navOptions {
+                        popUpTo(R.id.menu_bag) { inclusive = true }
+                    }
+                )
             }
         }
     }
