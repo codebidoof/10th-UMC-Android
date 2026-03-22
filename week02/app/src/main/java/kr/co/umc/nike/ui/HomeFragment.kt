@@ -31,11 +31,17 @@ class HomeFragment : Fragment() {
         setupBackPressHandler()
     }
 
+    /**
+     * 뒤로가기 버튼을 두 번 눌러야 종료되도록 설정
+     */
     private fun setupBackPressHandler() {
         requireActivity().onBackPressedDispatcher.addCallback(this) {
+            // 현재 시간과 이전에 뒤로가기를 누른 시간의 차이 계산
             if (System.currentTimeMillis() - backPressedTime <= backPressInterval) {
+                // 2초 이내에 다시 뒤로가기를 누르면 앱 종료
                 requireActivity().finish()
             } else {
+                // 첫 번째 뒤로가기: 토스트 메시지 표시
                 backPressedTime = System.currentTimeMillis()
                 Toast.makeText(
                     requireContext(),
