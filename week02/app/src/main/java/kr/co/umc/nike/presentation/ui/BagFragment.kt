@@ -1,4 +1,4 @@
-package kr.co.umc.nike.ui
+package kr.co.umc.nike.presentation.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

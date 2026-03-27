@@ -5,7 +5,7 @@
     android:id="@+id/bagFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.BagFragment">
+    tools:context=".presentation.ui.BagFragment">
 
     <LinearLayout
         android:layout_width="wrap_content"
