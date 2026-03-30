@@ -1,10 +1,10 @@
-package kr.co.umc.nike.presentation.feat_home.adapter
+package kr.co.umc.nike.presentation.feat_wish.adapter
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class GoodsAdapterDecorator: RecyclerView.ItemDecoration() {
+class WishGoodsAdapterDecorator: RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -13,10 +13,7 @@ class GoodsAdapterDecorator: RecyclerView.ItemDecoration() {
     ) {
         super.getItemOffsets(outRect, view, parent, state)
 
-        val position = parent.getChildAdapterPosition(view)
-        val count = state.itemCount
-        val offset = 16
-
+        val offset = 12
         outRect.right = offset
     }
 

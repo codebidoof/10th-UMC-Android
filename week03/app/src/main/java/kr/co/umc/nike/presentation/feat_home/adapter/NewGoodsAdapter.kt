@@ -6,22 +6,22 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.co.umc.nike.databinding.ItemNewGoodBinding
 import kr.co.umc.nike.presentation.feat_home.model.NewGood
 
-class GoodsAdapter(private val goodsList: MutableList<NewGood>)
-    : RecyclerView.Adapter<GoodsViewHolder>() {
+class NewGoodsAdapter(private val goodsList: MutableList<NewGood>)
+    : RecyclerView.Adapter<NewGoodsViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): GoodsViewHolder {
+    ): NewGoodsViewHolder {
         val binding = ItemNewGoodBinding.inflate(
             LayoutInflater.from(parent.context),
             parent,
             false
         )
-        return GoodsViewHolder(binding)
+        return NewGoodsViewHolder(binding)
     }
 
     override fun onBindViewHolder(
-        holder: GoodsViewHolder,
+        holder: NewGoodsViewHolder,
         position: Int
     ) {
         val nowGood = goodsList[position]

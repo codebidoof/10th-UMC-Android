@@ -5,12 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentWishBinding
+import kr.co.umc.nike.presentation.feat_wish.adapter.WishGoodsAdapter
+import kr.co.umc.nike.presentation.feat_wish.adapter.WishGoodsAdapterDecorator
+import kr.co.umc.nike.presentation.feat_wish.model.WishGood
+import timber.log.Timber
 
 class WishFragment : Fragment() {
 
     private var _binding: FragmentWishBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var adapter: WishGoodsAdapter
+    private lateinit var decorator: WishGoodsAdapterDecorator
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -18,6 +28,43 @@ class WishFragment : Fragment() {
     ): View {
         _binding = FragmentWishBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setDummyData()
+    }
+
+    private fun setDummyData() {
+        val goodsList = mutableListOf(
+            WishGood(
+                R.drawable.img_basketball_socks,
+                "Air Jordan 1 Mid",
+                goodPrice = "US$125"
+            ),
+            WishGood(
+                R.drawable.img_cushioned_shoes,
+                "Nike Everyday Plus\nCushioned",
+                "Training Ankle Socks (6 Pairs)",
+                "5 Colours",
+                "US$10"
+            ),
+        )
+
+        adapter = WishGoodsAdapter()
+        decorator = WishGoodsAdapterDecorator()
+
+        binding.rvWishGoods.apply {
+            adapter = this@WishFragment.adapter
+            layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            addItemDecoration(decorator)
+        }
+        Timber.d("Timber: 리사이클러뷰에 어댑터 붙임")
+
+        adapter.submitList(goodsList)
+        Timber.d("Timber: 리스트 submit")
+
     }
 
     override fun onDestroyView() {

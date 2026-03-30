@@ -4,7 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.co.umc.nike.databinding.ItemNewGoodBinding
 import kr.co.umc.nike.presentation.feat_home.model.NewGood
 
-class GoodsViewHolder(val binding: ItemNewGoodBinding) :
+class NewGoodsViewHolder(val binding: ItemNewGoodBinding) :
     RecyclerView.ViewHolder(binding.root) {
         fun bind(good: NewGood) {
             binding.apply {
