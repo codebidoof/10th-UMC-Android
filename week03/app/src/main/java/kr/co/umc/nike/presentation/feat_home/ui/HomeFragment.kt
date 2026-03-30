@@ -7,7 +7,12 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentHomeBinding
+import kr.co.umc.nike.presentation.feat_home.adapter.GoodsAdapter
+import kr.co.umc.nike.presentation.feat_home.adapter.GoodsAdapterDecorator
+import kr.co.umc.nike.presentation.feat_home.model.NewGood
 
 class HomeFragment : Fragment() {
 
@@ -29,6 +34,30 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupBackPressHandler()
+        setDummyData()
+    }
+
+    private fun setDummyData() {
+        val goodsList = mutableListOf<NewGood>(
+            NewGood(
+                R.drawable.img_air_jordan,
+                "Air Jordan XXXVI",
+                "US\$185"
+            ),
+            NewGood(
+                R.drawable.img_air_force,
+                "Nike Air Force 1 '07",
+                "US\$115"
+            ),
+        )
+
+        val adapter = GoodsAdapter(goodsList)
+        val decorator = GoodsAdapterDecorator()
+        binding.apply {
+            rvNewGoods.adapter = adapter
+            rvNewGoods.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+            rvNewGoods.addItemDecoration(decorator)
+        }
     }
 
     /**
