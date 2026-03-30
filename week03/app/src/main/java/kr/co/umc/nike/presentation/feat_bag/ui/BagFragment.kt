@@ -1,10 +1,10 @@
-package kr.co.umc.nike.presentation.ui
+package kr.co.umc.nike.presentation.feat_bag.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentBagBinding

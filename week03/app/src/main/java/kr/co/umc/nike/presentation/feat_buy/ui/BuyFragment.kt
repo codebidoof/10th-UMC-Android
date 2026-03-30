@@ -1,22 +1,22 @@
-package kr.co.umc.nike.presentation.ui
+package kr.co.umc.nike.presentation.feat_buy.ui
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kr.co.umc.nike.databinding.FragmentWishBinding
+import androidx.fragment.app.Fragment
+import kr.co.umc.nike.databinding.FragmentBuyBinding
 
-class WishFragment : Fragment() {
+class BuyFragment : Fragment() {
 
-    private var _binding: FragmentWishBinding? = null
+    private var _binding: FragmentBuyBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentWishBinding.inflate(inflater, container, false)
+        _binding = FragmentBuyBinding.inflate(inflater, container, false)
         return binding.root
     }
 
