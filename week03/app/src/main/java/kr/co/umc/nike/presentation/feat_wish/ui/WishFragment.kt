@@ -39,7 +39,7 @@ class WishFragment : Fragment() {
     private fun setDummyData() {
         val goodsList = mutableListOf(
             WishGood(
-                R.drawable.img_basketball_socks,
+                R.drawable.img_mid_socks,
                 "Air Jordan 1 Mid",
                 goodPrice = "US$125"
             ),
