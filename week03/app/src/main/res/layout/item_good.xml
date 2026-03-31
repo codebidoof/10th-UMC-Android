@@ -8,10 +8,9 @@
 
     <ImageView
         android:id="@+id/ivGood"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="152dp"
+        android:layout_height="152dp"
         android:src="@drawable/img_mid_socks"
-        android:scaleType="fitXY"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>
     

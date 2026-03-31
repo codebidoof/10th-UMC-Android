@@ -4,16 +4,17 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class GoodsRVDecorator: RecyclerView.ItemDecoration() {
+class GoodsRVDecorator(private val spanCount: Int, private val space: Int): RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
-        super.getItemOffsets(outRect, view, parent, state)
+        val position = parent.getChildAdapterPosition(view)
+        val column = position % spanCount // 현재 열 위치
 
-        val offset = 16
-        outRect.right = offset
+        outRect.right = if (column == spanCount - 1) 0 else space
+
     }
 }

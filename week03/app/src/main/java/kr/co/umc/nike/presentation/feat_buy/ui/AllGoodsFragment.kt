@@ -21,6 +21,9 @@ class AllGoodsFragment : Fragment() {
     private lateinit var adapter: GoodsRVAdapter
     private lateinit var decorator: GoodsRVDecorator
 
+    private val spanCount: Int = 2
+    private val space: Int = 16
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -71,7 +74,7 @@ class AllGoodsFragment : Fragment() {
         )
 
         adapter = GoodsRVAdapter()
-        decorator = GoodsRVDecorator()
+        decorator = GoodsRVDecorator(spanCount, space)
 
         binding.rvGoods.apply {
             adapter = this@AllGoodsFragment.adapter
