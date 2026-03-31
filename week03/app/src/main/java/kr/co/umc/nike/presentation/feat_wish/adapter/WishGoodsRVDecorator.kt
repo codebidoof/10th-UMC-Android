@@ -4,7 +4,7 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class WishGoodsAdapterDecorator: RecyclerView.ItemDecoration() {
+class WishGoodsRVDecorator: RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,

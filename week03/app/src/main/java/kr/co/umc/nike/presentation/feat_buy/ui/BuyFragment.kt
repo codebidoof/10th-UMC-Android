@@ -9,6 +9,7 @@ import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentBuyBinding
+import kr.co.umc.nike.presentation.feat_buy.adapter.GoodsVPAdapter
 
 class BuyFragment : Fragment() {
 

@@ -8,8 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentWishBinding
-import kr.co.umc.nike.presentation.feat_wish.adapter.WishGoodsAdapter
-import kr.co.umc.nike.presentation.feat_wish.adapter.WishGoodsAdapterDecorator
+import kr.co.umc.nike.presentation.feat_wish.adapter.WishGoodsRVAdapter
+import kr.co.umc.nike.presentation.feat_wish.adapter.WishGoodsRVDecorator
 import kr.co.umc.nike.presentation.feat_wish.model.WishGood
 import timber.log.Timber
 
@@ -18,8 +18,8 @@ class WishFragment : Fragment() {
     private var _binding: FragmentWishBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var adapter: WishGoodsAdapter
-    private lateinit var decorator: WishGoodsAdapterDecorator
+    private lateinit var adapter: WishGoodsRVAdapter
+    private lateinit var decorator: WishGoodsRVDecorator
 
 
     override fun onCreateView(
@@ -52,8 +52,8 @@ class WishFragment : Fragment() {
             ),
         )
 
-        adapter = WishGoodsAdapter()
-        decorator = WishGoodsAdapterDecorator()
+        adapter = WishGoodsRVAdapter()
+        decorator = WishGoodsRVDecorator()
 
         binding.rvWishGoods.apply {
             adapter = this@WishFragment.adapter

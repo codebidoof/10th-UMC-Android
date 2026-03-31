@@ -1,10 +1,10 @@
-package kr.co.umc.nike.presentation.feat_home.adapter
+package kr.co.umc.nike.presentation.feat_buy.adapter
 
 import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 
-class NewGoodsAdapterDecorator: RecyclerView.ItemDecoration() {
+class GoodsRVDecorator: RecyclerView.ItemDecoration() {
     override fun getItemOffsets(
         outRect: Rect,
         view: View,
@@ -16,5 +16,4 @@ class NewGoodsAdapterDecorator: RecyclerView.ItemDecoration() {
         val offset = 16
         outRect.right = offset
     }
-
 }

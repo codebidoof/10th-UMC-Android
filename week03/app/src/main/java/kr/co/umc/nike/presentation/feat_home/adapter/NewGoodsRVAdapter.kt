@@ -6,7 +6,7 @@ import androidx.recyclerview.widget.RecyclerView
 import kr.co.umc.nike.databinding.ItemNewGoodBinding
 import kr.co.umc.nike.presentation.feat_home.model.NewGood
 
-class NewGoodsAdapter(private val goodsList: MutableList<NewGood>)
+class NewGoodsRVAdapter(private val goodsList: MutableList<NewGood>)
     : RecyclerView.Adapter<NewGoodsViewHolder>() {
     override fun onCreateViewHolder(
         parent: ViewGroup,

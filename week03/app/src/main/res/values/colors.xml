@@ -6,4 +6,6 @@
     <color name="transparent">#00000000</color>
 
     <color name="grey">#767676</color>
+
+    <color name="highlight">#FC5100</color>
 </resources>

@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentHomeBinding
-import kr.co.umc.nike.presentation.feat_home.adapter.NewGoodsAdapter
-import kr.co.umc.nike.presentation.feat_home.adapter.NewGoodsAdapterDecorator
+import kr.co.umc.nike.presentation.feat_home.adapter.NewGoodsRVAdapter
+import kr.co.umc.nike.presentation.feat_home.adapter.NewGoodsRVDecorator
 import kr.co.umc.nike.presentation.feat_home.model.NewGood
 
 class HomeFragment : Fragment() {
@@ -51,8 +51,8 @@ class HomeFragment : Fragment() {
             ),
         )
 
-        val adapter = NewGoodsAdapter(goodsList)
-        val decorator = NewGoodsAdapterDecorator()
+        val adapter = NewGoodsRVAdapter(goodsList)
+        val decorator = NewGoodsRVDecorator()
         binding.apply {
             rvNewGoods.adapter = adapter
             rvNewGoods.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
