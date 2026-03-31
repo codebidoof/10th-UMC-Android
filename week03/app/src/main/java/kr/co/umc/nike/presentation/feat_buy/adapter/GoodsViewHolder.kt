@@ -13,11 +13,12 @@ class GoodsViewHolder(val binding: ItemGoodBinding) :
 
                 ivHeartInCircle.apply {
                     setImageResource(
-                        if (good.isBestSeller) R.drawable.filled_heart
+                        if (good.isWished) R.drawable.filled_heart
                         else R.drawable.empty_heart
                     )
                 }
 
+                tvBestSeller.isVisible = good.isBestSeller
                 ivGood.setImageResource(good.goodImage)
                 tvGood.text = good.goodName
                 tvGoodDescription.text = good.goodDescription

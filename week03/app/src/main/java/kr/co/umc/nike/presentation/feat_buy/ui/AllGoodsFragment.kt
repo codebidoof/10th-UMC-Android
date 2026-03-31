@@ -40,36 +40,40 @@ class AllGoodsFragment : Fragment() {
     private fun setDummyData() {
         val goodsList = mutableListOf(
             Good(
-                R.drawable.img_mid_socks,
-                false,
-                "Nike Everyday Plus Cushioned",
-                "Training Ankle Socks (6 Pairs)",
-                "5 Colours",
-                "US$10"
+                goodImage = R.drawable.img_mid_socks,
+                isWished = true,
+                isBestSeller = false,
+                goodName = "Nike Everyday Plus Cushioned",
+                goodDescription = "Training Ankle Socks (6 Pairs)",
+                colorDescription = "5 Colours",
+                goodPrice = "US$10"
             ),
             Good(
-                R.drawable.img_elite_crew,
-                false,
-                "Nike Elite Crew",
-                "Basketball Socks",
-                "7 Colours",
-                "US$16"
+                goodImage = R.drawable.img_elite_crew,
+                isWished = false,
+                isBestSeller = false,
+                goodName = "Nike Elite Crew",
+                goodDescription = "Basketball Socks",
+                colorDescription = "7 Colours",
+                goodPrice = "US$16"
             ),
             Good(
-                R.drawable.img_air_force_107,
-                true,
-                "Nike Air Force 1 '07",
-                "Women's Shoes",
-                "5 Colours",
-                "US$115"
+                goodImage = R.drawable.img_air_force_107,
+                isWished = false,
+                isBestSeller = true,
+                goodName = "Nike Air Force 1 '07",
+                goodDescription = "Women's Shoes",
+                colorDescription = "5 Colours",
+                goodPrice = "US$115"
             ),
             Good(
-                R.drawable.img_air_force_essential,
-                true,
-                "Jordan ENike Air Force 1 '07ssentials",
-                "Men's Shoes",
-                "2 Colours",
-                "US$115"
+                goodImage = R.drawable.img_air_force_essential,
+                isWished = false,
+                isBestSeller = true,
+                goodName = "Jordan ENike Air Force 1 '07ssentials",
+                goodDescription = "Men's Shoes",
+                colorDescription = "2 Colours",
+                goodPrice = "US$115"
             ),
         )
 
