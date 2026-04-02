@@ -36,7 +36,6 @@ class WishGoodsRVAdapter()
             parent,
             false
         )
-        Timber.d("Timber: 뷰홀더 인스턴스 생성")
         return WishGoodsViewHolder(binding)
     }
 
@@ -44,7 +43,6 @@ class WishGoodsRVAdapter()
         holder: WishGoodsViewHolder,
         position: Int
     ) {
-        Timber.d("Timber: ${position}")
         holder.bind(getItem(position))
     }
 
