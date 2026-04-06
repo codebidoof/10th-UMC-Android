@@ -2,12 +2,30 @@ package kr.co.umc.nike.presentation.feat_home.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import kr.co.umc.nike.databinding.ItemNewGoodBinding
 import kr.co.umc.nike.presentation.feat_home.model.NewGood
 
-class NewGoodsRVAdapter(private val goodsList: MutableList<NewGood>)
-    : RecyclerView.Adapter<NewGoodsViewHolder>() {
+class NewGoodsRVAdapter()
+    : ListAdapter<NewGood, NewGoodsViewHolder>(DIFF_CALLBACK) {
+
+    companion object {
+        private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<NewGood>() {
+            override fun areItemsTheSame(
+                oldItem: NewGood,
+                newItem: NewGood
+            ): Boolean =
+                oldItem.goodName == newItem.goodName
+
+            override fun areContentsTheSame(
+                oldItem: NewGood,
+                newItem: NewGood
+            ): Boolean =
+                oldItem == newItem
+        }
+    }
+
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
@@ -24,9 +42,7 @@ class NewGoodsRVAdapter(private val goodsList: MutableList<NewGood>)
         holder: NewGoodsViewHolder,
         position: Int
     ) {
-        val nowGood = goodsList[position]
-        holder.bind(nowGood)
+        holder.bind(getItem(position))
     }
 
-    override fun getItemCount(): Int = goodsList.size
 }

@@ -6,7 +6,6 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import kr.co.umc.nike.databinding.ItemWishGoodBinding
 import kr.co.umc.nike.presentation.feat_wish.model.WishGood
-import timber.log.Timber
 
 class WishGoodsRVAdapter()
     : ListAdapter<WishGood, WishGoodsViewHolder>(DIFF_CALLBACK) {

@@ -38,7 +38,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun setDummyData() {
-        val goodsList = mutableListOf<NewGood>(
+        val goodsList = mutableListOf(
             NewGood(
                 R.drawable.img_air_jordan,
                 "Air Jordan XXXVI",
@@ -51,13 +51,15 @@ class HomeFragment : Fragment() {
             ),
         )
 
-        val adapter = NewGoodsRVAdapter(goodsList)
+        val adapter = NewGoodsRVAdapter()
         val decorator = NewGoodsRVDecorator()
         binding.apply {
             rvNewGoods.adapter = adapter
             rvNewGoods.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             rvNewGoods.addItemDecoration(decorator)
         }
+
+        adapter.submitList(goodsList)
     }
 
     /**
