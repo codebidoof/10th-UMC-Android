@@ -1,4 +1,4 @@
-package kr.co.umc.nike.data.data_source.local.room.table
+package kr.co.umc.nike.data.data_source.local.room.entity
 
 import androidx.room.Entity
 import androidx.room.ForeignKey

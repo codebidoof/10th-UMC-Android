@@ -1,6 +1,6 @@
 package kr.co.umc.nike.data.mapper
 
-import kr.co.umc.nike.data.data_source.local.room.table.ProductEntity
+import kr.co.umc.nike.data.data_source.local.room.entity.ProductEntity
 import kr.co.umc.nike.domain.entity.ProductCategory
 import kr.co.umc.nike.domain.entity.ProductSummary
 

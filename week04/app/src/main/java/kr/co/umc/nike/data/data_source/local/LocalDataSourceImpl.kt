@@ -3,7 +3,7 @@ package kr.co.umc.nike.data.data_source.local
 import kotlinx.coroutines.flow.Flow
 import kr.co.umc.nike.data.data_source.local.room.dao.CategoryDao
 import kr.co.umc.nike.data.data_source.local.room.dao.ProductDao
-import kr.co.umc.nike.data.data_source.local.room.table.ProductEntity
+import kr.co.umc.nike.data.data_source.local.room.entity.ProductEntity
 import javax.inject.Inject
 
 class LocalDataSourceImpl @Inject constructor(

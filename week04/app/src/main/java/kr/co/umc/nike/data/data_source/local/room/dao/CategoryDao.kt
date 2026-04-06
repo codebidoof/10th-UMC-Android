@@ -6,7 +6,7 @@ import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
-import kr.co.umc.nike.data.data_source.local.room.table.CategoryEntity
+import kr.co.umc.nike.data.data_source.local.room.entity.CategoryEntity
 
 @Dao
 interface CategoryDao {

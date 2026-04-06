@@ -6,8 +6,8 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 import kr.co.umc.nike.data.data_source.local.room.dao.CategoryDao
 import kr.co.umc.nike.data.data_source.local.room.dao.ProductDao
-import kr.co.umc.nike.data.data_source.local.room.table.CategoryEntity
-import kr.co.umc.nike.data.data_source.local.room.table.ProductEntity
+import kr.co.umc.nike.data.data_source.local.room.entity.CategoryEntity
+import kr.co.umc.nike.data.data_source.local.room.entity.ProductEntity
 
 @Database(entities = [ProductEntity::class, CategoryEntity::class], version = 1, exportSchema = false)
 abstract class ProductDatabase: RoomDatabase() {
