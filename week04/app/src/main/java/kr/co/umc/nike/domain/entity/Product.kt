@@ -13,6 +13,7 @@ package kr.co.umc.nike.domain.entity
 data class ProductSummary(
     val id: Int,
     val productName: String,
+    val category: ProductCategory,
     val productDescription: String,
     val colorNum: Int,
     val productImage: Int,
@@ -20,6 +21,25 @@ data class ProductSummary(
     val isBestSeller: Boolean,
     val productPrice: Int
 )
+
+enum class ProductCategory(val categoryId: Int, val displayName: String) {
+    ALL(1, "전체"),
+    TOPS(2, "Tops & T-Shirts"),
+    SALE(3, "sale");
+
+    companion object {
+
+        fun from(categoryId: Int): ProductCategory {
+            return entries.find { it.categoryId == categoryId }
+                ?: throw IllegalArgumentException("UnKnown ProductCategory categoryId: $categoryId")
+        }
+
+        fun fromDisplayName(displayName: String): ProductCategory {
+            return entries.find { it.displayName == displayName }
+                ?: throw IllegalArgumentException("UnKnown ProductCategory displayName: $displayName")
+        }
+    }
+}
 
 
 

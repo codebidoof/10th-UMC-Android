@@ -1,6 +1,7 @@
 package kr.co.umc.nike.data.mapper
 
 import kr.co.umc.nike.data.data_source.local.room.table.ProductEntity
+import kr.co.umc.nike.domain.entity.ProductCategory
 import kr.co.umc.nike.domain.entity.ProductSummary
 
 /**
@@ -17,6 +18,7 @@ object ProductMapper {
         return ProductSummary(
             id = id,
             productName = name,
+            category = ProductCategory.from(categoryId),
             productDescription = productDescription,
             colorNum = colorNum,
             productImage = productImage,
