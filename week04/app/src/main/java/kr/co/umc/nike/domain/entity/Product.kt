@@ -31,12 +31,12 @@ enum class ProductCategory(val categoryId: Int, val displayName: String) {
 
         fun from(categoryId: Int): ProductCategory {
             return entries.find { it.categoryId == categoryId }
-                ?: throw IllegalArgumentException("UnKnown ProductCategory categoryId: $categoryId")
+                ?: throw IllegalArgumentException("UnKnown ProductCategory! categoryId: $categoryId")
         }
 
         fun fromDisplayName(displayName: String): ProductCategory {
             return entries.find { it.displayName == displayName }
-                ?: throw IllegalArgumentException("UnKnown ProductCategory displayName: $displayName")
+                ?: throw IllegalArgumentException("UnKnown ProductCategory! displayName: $displayName")
         }
     }
 }
