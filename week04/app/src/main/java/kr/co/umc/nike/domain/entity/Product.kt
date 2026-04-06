@@ -23,9 +23,8 @@ data class ProductSummary(
 )
 
 enum class ProductCategory(val categoryId: Int, val displayName: String) {
-    ALL(1, "전체"),
-    TOPS(2, "Tops & T-Shirts"),
-    SALE(3, "sale");
+    TOPS(1, "Tops & T-Shirts"),
+    SALE(2, "sale");
 
     companion object {
 

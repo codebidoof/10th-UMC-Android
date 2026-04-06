@@ -7,6 +7,7 @@ import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 import kr.co.umc.nike.data.data_source.local.room.table.ProductEntity
+import androidx.room.ForeignKey
 
 @Dao
 interface ProductDao {
@@ -25,6 +26,14 @@ interface ProductDao {
     //모든 상품 데이터를 가져오는 쿼리
     @Query("SELECT * FROM ProductTable")
     fun getAllProducts(): Flow<List<ProductEntity>>
+
+    //위시 여부에 따라 상품 데이터를 가져오는 쿼리
+    @Query("SELECT * FROM ProductTable WHERE isWished = :isWished")
+    fun getProductsByWish(isWished: Boolean): Flow<List<ProductEntity>>
+
+    //새 상품인지 여부에 따라 데이터를 가져오는 쿼리
+    @Query("SELECT * FROM ProductTable WHERE isNew = :isNew")
+    fun getProductsByNew(isNew: Boolean): Flow<List<ProductEntity>>
 
     //특정 카테고리의 상품만 가져오는 쿼리
     @Query("SELECT * FROM ProductTable WHERE categoryId = :categoryId")

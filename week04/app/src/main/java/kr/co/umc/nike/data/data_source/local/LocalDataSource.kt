@@ -7,6 +7,10 @@ interface LocalDataSource {
 
     fun getAllProducts(): Flow<List<ProductEntity>>
 
+    fun getProductsByWish(isWished: Boolean): Flow<List<ProductEntity>>
+
+    fun getProductsByNew(isNew: Boolean): Flow<List<ProductEntity>>
+
     fun getProductsByCategory(categoryId: Int): Flow<List<ProductEntity>>
 
 }

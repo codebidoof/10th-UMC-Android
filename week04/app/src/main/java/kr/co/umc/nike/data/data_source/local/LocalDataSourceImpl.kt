@@ -13,6 +13,12 @@ class LocalDataSourceImpl @Inject constructor(
 
     override fun getAllProducts(): Flow<List<ProductEntity>> = productDao.getAllProducts()
 
+    override fun getProductsByWish(isWished: Boolean): Flow<List<ProductEntity>> =
+        productDao.getProductsByWish(isWished)
+
+    override fun getProductsByNew(isNew: Boolean): Flow<List<ProductEntity>> =
+        productDao.getProductsByNew(isNew)
+
     override fun getProductsByCategory(categoryId: Int): Flow<List<ProductEntity>> =
         productDao.getProductsByCategory(categoryId)
 }

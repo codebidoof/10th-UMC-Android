@@ -1,0 +1,4 @@
+package kr.co.umc.nike.domain.usecase
+
+class GetNewProductsUseCase {
+}

@@ -1,9 +1,20 @@
 package kr.co.umc.nike.data.data_source.local.room.table
 
 import androidx.room.Entity
+import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "ProductTable")
+@Entity(
+    tableName = "ProductTable",
+    foreignKeys = [
+        ForeignKey(
+            entity = CategoryEntity::class,
+            parentColumns = ["id"],      // Category의 PK
+            childColumns = ["categoryId"], // Product의 FK
+            onDelete = ForeignKey.CASCADE
+        )
+    ]
+)
 data class ProductEntity(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0, //Primary Key (자동 생성)
@@ -14,6 +25,7 @@ data class ProductEntity(
     val productImage: Int, //이미지 소스
     val price: Int, //가격
     val isWished: Boolean, //위시 여부
+    val isNew: Boolean, //신상품 여부
     val isBestSeller: Boolean, //베스트셀러 여부
     val categoryId: Int //외래키
 )
