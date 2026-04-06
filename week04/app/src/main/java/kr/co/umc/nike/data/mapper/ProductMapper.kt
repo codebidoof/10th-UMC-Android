@@ -23,6 +23,7 @@ object ProductMapper {
             colorNum = colorNum,
             productImage = productImage,
             isWished = isWished,
+            isNew = isNew,
             isBestSeller = isBestSeller,
             productPrice = price
         )

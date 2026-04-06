@@ -18,6 +18,20 @@ class ProductRepositoryImpl @Inject constructor(
             }
     }
 
+    override fun getProductsByWish(isWished: Boolean): Flow<List<ProductSummary>> {
+        return localDataSource.getProductsByWish(isWished)
+            .map { entityList ->
+                entityList.map { it.toDomain() }
+            }
+    }
+
+    override fun getProductsByNew(isNew: Boolean): Flow<List<ProductSummary>> {
+        return localDataSource.getProductsByNew(isNew)
+            .map { entityList ->
+                entityList.map { it.toDomain() }
+            }
+    }
+
     override fun getProductsByCategory(categoryId: Int): Flow<List<ProductSummary>> {
         return localDataSource.getProductsByCategory(categoryId)
             .map { entityList ->

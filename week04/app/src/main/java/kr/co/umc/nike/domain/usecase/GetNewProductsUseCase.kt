@@ -1,4 +1,14 @@
 package kr.co.umc.nike.domain.usecase
 
-class GetNewProductsUseCase {
+import kotlinx.coroutines.flow.Flow
+import kr.co.umc.nike.domain.entity.ProductSummary
+import kr.co.umc.nike.domain.repository.ProductRepository
+import javax.inject.Inject
+
+class GetNewProductsUseCase @Inject constructor(
+    private val repository: ProductRepository
+) {
+    operator fun invoke(isNew: Boolean): Flow<List<ProductSummary>> {
+        return repository.getProductsByNew(isNew)
+    }
 }

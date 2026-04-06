@@ -7,6 +7,10 @@ interface ProductRepository {
 
     fun getAllProducts(): Flow<List<ProductSummary>>
 
+    fun getProductsByWish(isWished: Boolean): Flow<List<ProductSummary>>
+
+    fun getProductsByNew(isNew: Boolean): Flow<List<ProductSummary>>
+
     fun getProductsByCategory(categoryId: Int): Flow<List<ProductSummary>>
 
 }

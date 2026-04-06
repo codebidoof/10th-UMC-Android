@@ -18,6 +18,7 @@ data class ProductSummary(
     val colorNum: Int,
     val productImage: Int,
     val isWished: Boolean,
+    val isNew: Boolean,
     val isBestSeller: Boolean,
     val productPrice: Int
 )
