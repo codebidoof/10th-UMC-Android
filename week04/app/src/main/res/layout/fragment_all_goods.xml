@@ -5,7 +5,7 @@
     android:id="@+id/frameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.feat_buy.ui.AllGoodsFragment">
+    tools:context=".presentation.buy.ui.AllGoodsFragment">
 
     <Space
         android:id="@+id/spTop"

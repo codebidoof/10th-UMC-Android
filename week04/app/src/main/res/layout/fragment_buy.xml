@@ -5,7 +5,7 @@
     android:id="@+id/buyFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.feat_buy.ui.BuyFragment">
+    tools:context=".presentation.buy.ui.BuyFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glTop"

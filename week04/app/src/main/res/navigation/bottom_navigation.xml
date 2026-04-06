@@ -7,29 +7,29 @@
 
     <fragment
         android:id="@+id/menu_home"
-        android:name="kr.co.umc.nike.presentation.feat_home.ui.HomeFragment"
+        android:name="kr.co.umc.nike.presentation.home.ui.HomeFragment"
         tools:layout="@layout/fragment_home">
 
     </fragment>
 
     <fragment
         android:id="@+id/menu_buy"
-        android:name="kr.co.umc.nike.presentation.feat_buy.ui.BuyFragment"
+        android:name="kr.co.umc.nike.presentation.buy.ui.BuyFragment"
         tools:layout="@layout/fragment_buy"/>
 
     <fragment
         android:id="@+id/menu_wish"
-        android:name="kr.co.umc.nike.presentation.feat_wish.ui.WishFragment"
+        android:name="kr.co.umc.nike.presentation.wish.ui.WishFragment"
         tools:layout="@layout/fragment_wish"/>
 
     <fragment
         android:id="@+id/menu_bag"
-        android:name="kr.co.umc.nike.presentation.feat_bag.ui.BagFragment"
+        android:name="kr.co.umc.nike.presentation.bag.ui.BagFragment"
         tools:layout="@layout/fragment_bag"/>
 
     <fragment
         android:id="@+id/menu_profile"
-        android:name="kr.co.umc.nike.presentation.feat_profile.ui.ProfileFragment"
+        android:name="kr.co.umc.nike.presentation.profile.ui.ProfileFragment"
         tools:layout="@layout/fragment_profile"/>
 
 </navigation>

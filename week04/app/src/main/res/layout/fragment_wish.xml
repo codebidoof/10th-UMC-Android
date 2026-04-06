@@ -5,7 +5,7 @@
     android:id="@+id/wishFragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.feat_wish.ui.WishFragment">
+    tools:context=".presentation.wish.ui.WishFragment">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/glTop"
