@@ -12,13 +12,13 @@ package kr.co.umc.nike.domain.entity
  */
 data class ProductSummary(
     val id: Int,
-    val goodImage: Int,
+    val productName: String,
+    val productDescription: String,
+    val colorNum: Int,
+    val productImage: Int,
     val isWished: Boolean,
     val isBestSeller: Boolean,
-    val goodName: String,
-    val goodDescription: String,
-    val colorDescription: String,
-    val goodPrice: String
+    val productPrice: Int
 )
 
 

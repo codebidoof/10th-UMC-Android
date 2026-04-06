@@ -9,8 +9,8 @@ data class ProductEntity(
     val id: Int = 0, //Primary Key (자동 생성)
     val name: String, //이름
     val content: String, // 상세 내용
-    val goodDescription: String, // 간단 설명
-    val colorDescription: Int, //컬러 개수
+    val productDescription: String, // 간단 설명
+    val colorNum: Int, //컬러 개수
     val productImage: Int, //이미지 소스
     val price: Int, //가격
     val isWished: Boolean, //위시 여부
