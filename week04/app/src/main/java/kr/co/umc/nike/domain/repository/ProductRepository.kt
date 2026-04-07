@@ -13,4 +13,6 @@ interface ProductRepository {
 
     fun getProductsByCategory(categoryId: Int): Flow<List<ProductSummary>>
 
+    suspend fun updateWishStatus(id: Int)
+
 }

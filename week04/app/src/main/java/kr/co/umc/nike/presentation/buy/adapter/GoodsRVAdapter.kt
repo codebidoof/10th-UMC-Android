@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.DiffUtil
 import kr.co.umc.nike.databinding.ItemGoodBinding
 import kr.co.umc.nike.presentation.buy.model.Good
 
-class GoodsRVAdapter()
+class GoodsRVAdapter(private val onHeartClicked: (Good) -> Unit)
     : ListAdapter<Good, GoodsViewHolder>(DIFF_CALLBACK) {
     companion object {
         private val DIFF_CALLBACK = object : DiffUtil.ItemCallback<Good>() {
@@ -22,6 +22,10 @@ class GoodsRVAdapter()
                 newItem: Good
             ): Boolean =
                 oldItem == newItem
+
+            override fun getChangePayload(oldItem: Good, newItem: Good): Any? {
+                return if (oldItem.isWished != newItem.isWished) true else null
+            }
 
         }
     }
@@ -42,7 +46,7 @@ class GoodsRVAdapter()
         holder: GoodsViewHolder,
         position: Int
     ) {
-        holder.bind(getItem(position))
+        holder.bind(getItem(position), onHeartClicked)
 
     }
 }

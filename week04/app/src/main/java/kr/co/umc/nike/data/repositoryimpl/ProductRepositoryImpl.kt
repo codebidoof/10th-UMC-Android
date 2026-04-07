@@ -1,7 +1,9 @@
 package kr.co.umc.nike.data.repositoryimpl
 
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import kr.co.umc.nike.data.data_source.local.LocalDataSource
 import kr.co.umc.nike.data.mapper.ProductMapper.toDomain
 import kr.co.umc.nike.domain.entity.ProductSummary
@@ -37,6 +39,12 @@ class ProductRepositoryImpl @Inject constructor(
             .map { entityList ->
                 entityList.map { it.toDomain() }
             }
+    }
+
+    override suspend fun updateWishStatus(id: Int) {
+        withContext(Dispatchers.IO) {
+            localDataSource.updateWishStatus(id)
+        }
     }
 
 }

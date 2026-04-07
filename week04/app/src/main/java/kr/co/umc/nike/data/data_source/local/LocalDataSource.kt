@@ -13,4 +13,5 @@ interface LocalDataSource {
 
     fun getProductsByCategory(categoryId: Int): Flow<List<ProductEntity>>
 
+    suspend fun updateWishStatus(id: Int)
 }

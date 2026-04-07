@@ -38,4 +38,8 @@ interface ProductDao {
     @Query("SELECT * FROM ProductTable WHERE categoryId = :categoryId")
     fun getProductsByCategory(categoryId: Int): Flow<List<ProductEntity>>
 
+    //상품의 위시 여부를 바꿈
+    @Query("UPDATE ProductTable SET isWished = NOT isWished WHERE id = :id") // 이거 좋은 쿼리문인가..?
+    fun updateWishStatus(id: Int)
+
 }

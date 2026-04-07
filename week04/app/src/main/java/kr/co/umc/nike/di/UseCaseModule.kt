@@ -8,6 +8,7 @@ import kr.co.umc.nike.domain.repository.ProductRepository
 import kr.co.umc.nike.domain.usecase.GetAllProductsUseCase
 import kr.co.umc.nike.domain.usecase.GetNewProductsUseCase
 import kr.co.umc.nike.domain.usecase.GetWishProductsUseCase
+import kr.co.umc.nike.domain.usecase.UpdateWishStatusUseCase
 import javax.inject.Singleton
 
 @Module
@@ -31,4 +32,11 @@ object UseCaseModule {
     fun provideGetWishProductsUseCase(
         repository: ProductRepository
     ): GetWishProductsUseCase = GetWishProductsUseCase(repository)
+
+    @Provides
+    @Singleton
+    fun provideUpdateWishStateUseCase(
+        repository: ProductRepository
+    ): UpdateWishStatusUseCase = UpdateWishStatusUseCase(repository)
+
 }

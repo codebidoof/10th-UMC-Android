@@ -50,7 +50,7 @@ class AllGoodsFragment : Fragment() {
     }
 
     private fun setRecyclerView() {
-        adapter = GoodsRVAdapter()
+        adapter = GoodsRVAdapter{ onHeartClicked(it) }
         decorator = GoodsRVDecorator(spanCount, space)
 
         binding.rvGoods.apply {
@@ -82,57 +82,10 @@ class AllGoodsFragment : Fragment() {
 
         }
     }
-//    private fun setDummyData() {
-//        val goodsList = mutableListOf(
-//            Good(
-//                goodImage = R.drawable.img_mid_socks,
-//                isWished = true,
-//                isBestSeller = false,
-//                goodName = "Nike Everyday Plus Cushioned",
-//                goodDescription = "Training Ankle Socks (6 Pairs)",
-//                colorDescription = "5 Colours",
-//                goodPrice = "US$10"
-//            ),
-//            Good(
-//                goodImage = R.drawable.img_elite_crew,
-//                isWished = false,
-//                isBestSeller = false,
-//                goodName = "Nike Elite Crew",
-//                goodDescription = "Basketball Socks",
-//                colorDescription = "7 Colours",
-//                goodPrice = "US$16"
-//            ),
-//            Good(
-//                goodImage = R.drawable.img_air_force_107,
-//                isWished = false,
-//                isBestSeller = true,
-//                goodName = "Nike Air Force 1 '07",
-//                goodDescription = "Women's Shoes",
-//                colorDescription = "5 Colours",
-//                goodPrice = "US$115"
-//            ),
-//            Good(
-//                goodImage = R.drawable.img_air_force_essential,
-//                isWished = false,
-//                isBestSeller = true,
-//                goodName = "Jordan ENike Air Force 1 '07ssentials",
-//                goodDescription = "Men's Shoes",
-//                colorDescription = "2 Colours",
-//                goodPrice = "US$115"
-//            ),
-//        )
-//
-//        adapter = GoodsRVAdapter()
-//        decorator = GoodsRVDecorator(spanCount, space)
-//
-//        binding.rvGoods.apply {
-//            adapter = this@AllGoodsFragment.adapter
-//            layoutManager = GridLayoutManager(context, 2, VERTICAL, false)
-//            addItemDecoration(decorator)
-//        }
-//
-//        adapter.submitList(goodsList)
-//    }
+
+    private fun onHeartClicked(item: Good) {
+        viewModel.toggleWish(item.id)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()

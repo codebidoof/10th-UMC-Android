@@ -8,7 +8,7 @@ import kr.co.umc.nike.presentation.buy.model.Good
 
 class GoodsViewHolder(val binding: ItemGoodBinding) :
     RecyclerView.ViewHolder(binding.root) {
-        fun bind(good: Good) {
+        fun bind(good: Good, onHeartClicked: (Good) -> Unit) {
             binding.apply {
 
                 ivHeartInCircle.apply {
@@ -16,6 +16,9 @@ class GoodsViewHolder(val binding: ItemGoodBinding) :
                         if (good.isWished) R.drawable.filled_heart
                         else R.drawable.empty_heart
                     )
+                    setOnClickListener {
+                        onHeartClicked(good)
+                    }
                 }
 
                 tvBestSeller.isVisible = good.isBestSeller

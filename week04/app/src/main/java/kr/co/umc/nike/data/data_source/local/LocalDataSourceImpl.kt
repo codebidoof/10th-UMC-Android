@@ -21,4 +21,8 @@ class LocalDataSourceImpl @Inject constructor(
 
     override fun getProductsByCategory(categoryId: Int): Flow<List<ProductEntity>> =
         productDao.getProductsByCategory(categoryId)
+
+    override suspend fun updateWishStatus(id: Int) =
+        productDao.updateWishStatus(id)
+
 }

@@ -10,6 +10,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetAllProductsUseCase
+import kr.co.umc.nike.domain.usecase.UpdateWishStatusUseCase
 import kr.co.umc.nike.presentation.buy.mapper.GoodMapper.toPresentation
 import kr.co.umc.nike.presentation.buy.model.Good
 import kr.co.umc.nike.presentation.util.UiState
@@ -17,7 +18,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class GoodsViewModel @Inject constructor(
-    private val getAllProductsUseCase: GetAllProductsUseCase
+    private val getAllProductsUseCase: GetAllProductsUseCase,
+    private val updateWishStateUseCase: UpdateWishStatusUseCase
 ): ViewModel() {
 
     private val _goodsState = MutableStateFlow<UiState<List<Good>>>(UiState.Idle)
@@ -26,7 +28,6 @@ class GoodsViewModel @Inject constructor(
     init {
         loadGoods()
     }
-
     private fun loadGoods() {
         viewModelScope.launch {
             _goodsState.value = UiState.Loading
@@ -43,5 +44,11 @@ class GoodsViewModel @Inject constructor(
                 }
             }
         }
+
+    fun toggleWish(id: Int) {
+        viewModelScope.launch {
+            updateWishStateUseCase(id)
+        }
+    }
 
 }
