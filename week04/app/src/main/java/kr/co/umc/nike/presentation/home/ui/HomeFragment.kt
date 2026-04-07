@@ -7,20 +7,29 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.addCallback
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.FragmentHomeBinding
 import kr.co.umc.nike.presentation.home.adapter.NewGoodsRVAdapter
 import kr.co.umc.nike.presentation.home.adapter.NewGoodsRVDecorator
 import kr.co.umc.nike.presentation.home.model.NewGood
+import kr.co.umc.nike.presentation.home.viewmodel.HomeViewModel
+import kr.co.umc.nike.presentation.util.UiState
 
+@AndroidEntryPoint
 class HomeFragment : Fragment() {
-
+    private val viewModel: HomeViewModel by viewModels()
     private var _binding: FragmentHomeBinding? = null
     private val binding get() = _binding!!
 
     private var backPressedTime: Long = 0
     private val backPressInterval: Long = 2000
+
+    private lateinit var adapter: NewGoodsRVAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -34,33 +43,69 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         setupBackPressHandler()
-        setDummyData()
+        setRecyclerView()
+        //setDummyData()
+        observeNewGoodsState()
     }
 
-    private fun setDummyData() {
-        val goodsList = mutableListOf(
-            NewGood(
-                R.drawable.img_air_jordan,
-                "Air Jordan XXXVI",
-                "US\$185"
-            ),
-            NewGood(
-                R.drawable.img_air_force,
-                "Nike Air Force 1 '07",
-                "US\$115"
-            ),
-        )
-
-        val adapter = NewGoodsRVAdapter()
+    private fun setRecyclerView() {
+        adapter = NewGoodsRVAdapter()
         val decorator = NewGoodsRVDecorator()
         binding.apply {
             rvNewGoods.adapter = adapter
             rvNewGoods.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
             rvNewGoods.addItemDecoration(decorator)
         }
-
-        adapter.submitList(goodsList)
     }
+
+    private fun observeNewGoodsState() {
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewModel.newGoodsState.collect { state ->
+                when(state) {
+                    is UiState.Idle -> {
+                        //초기 상태, 아무것도 안함
+                    }
+                    is UiState.Loading -> {
+                        // 추후 ProgressBar 삽입
+                    }
+                    is UiState.Success -> {
+                        // 리사이클러뷰에 데이터 삽입
+                        adapter.submitList(state.data)
+                    }
+                    is UiState.Error -> {
+                        Toast.makeText(requireContext(), state.message, Toast.LENGTH_SHORT).show()
+                    }
+
+                }
+            }
+        }
+    }
+
+
+//    private fun setDummyData() {
+//        val goodsList = mutableListOf(
+//            NewGood(
+//                R.drawable.img_air_jordan,
+//                "Air Jordan XXXVI",
+//                "US\$185"
+//            ),
+//            NewGood(
+//                R.drawable.img_air_force,
+//                "Nike Air Force 1 '07",
+//                "US\$115"
+//            ),
+//        )
+//
+//        val adapter = NewGoodsRVAdapter()
+//        val decorator = NewGoodsRVDecorator()
+//        binding.apply {
+//            rvNewGoods.adapter = adapter
+//            rvNewGoods.layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//            rvNewGoods.addItemDecoration(decorator)
+//        }
+//
+//        adapter.submitList(goodsList)
+//    }
 
     /**
      * 뒤로가기 버튼을 두 번 눌러야 종료되도록 설정

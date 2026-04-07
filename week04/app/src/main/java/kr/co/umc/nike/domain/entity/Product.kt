@@ -25,10 +25,10 @@ data class ProductSummary(
 
 enum class ProductCategory(val categoryId: Int, val displayName: String) {
     TOPS(1, "Tops & T-Shirts"),
-    SALE(2, "sale");
+    SHOES(2, "Shoes"),
+    SOCKS(3, "Socks");
 
     companion object {
-
         fun from(categoryId: Int): ProductCategory {
             return entries.find { it.categoryId == categoryId }
                 ?: throw IllegalArgumentException("UnKnown ProductCategory! categoryId: $categoryId")

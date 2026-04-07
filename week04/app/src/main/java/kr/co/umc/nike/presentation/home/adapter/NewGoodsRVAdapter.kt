@@ -16,7 +16,7 @@ class NewGoodsRVAdapter()
                 oldItem: NewGood,
                 newItem: NewGood
             ): Boolean =
-                oldItem.goodName == newItem.goodName
+                oldItem.id == newItem.id
 
             override fun areContentsTheSame(
                 oldItem: NewGood,

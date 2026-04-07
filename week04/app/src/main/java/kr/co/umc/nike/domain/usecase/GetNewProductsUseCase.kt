@@ -8,7 +8,7 @@ import javax.inject.Inject
 class GetNewProductsUseCase @Inject constructor(
     private val repository: ProductRepository
 ) {
-    operator fun invoke(isNew: Boolean): Flow<List<ProductSummary>> {
-        return repository.getProductsByNew(isNew)
+    operator fun invoke(): Flow<List<ProductSummary>> {
+        return repository.getProductsByNew(true)
     }
 }
