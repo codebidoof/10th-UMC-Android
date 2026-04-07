@@ -16,7 +16,7 @@ class WishGoodsRVAdapter()
                 oldItem: WishGood,
                 newItem: WishGood
             ): Boolean =
-                oldItem.goodName == newItem.goodName
+                oldItem.id == newItem.id
 
             override fun areContentsTheSame(
                 oldItem: WishGood,
