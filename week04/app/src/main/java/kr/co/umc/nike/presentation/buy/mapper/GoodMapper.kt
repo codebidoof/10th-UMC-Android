@@ -15,6 +15,7 @@ object GoodMapper {
      */
     fun ProductSummary.toPresentation(): Good =
         Good(
+            id = id,
             goodImage = productImage,
             isWished = isWished,
             isBestSeller = isBestSeller,
