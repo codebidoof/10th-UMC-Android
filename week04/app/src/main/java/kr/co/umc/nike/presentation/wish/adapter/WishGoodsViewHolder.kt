@@ -13,16 +13,9 @@ class WishGoodsViewHolder(private val binding: ItemWishGoodBinding) :
                 ivWishGood.setImageResource(good.goodImage)
                 tvWishGood.text = good.goodName
                 tvWishGoodPrice.text = good.goodPrice
+                tvWishGoodDescription.text = good.description
+                tvWishGoodColorDescription.text = good.colorDescription
 
-                tvWishGoodDescription.apply {
-                    text = good.description
-                    visibility = if (good.description != null) View.VISIBLE else View.GONE
-                }
-
-                tvWishGoodColorDescription.apply {
-                    text = good.colorDescription
-                    visibility = if (good.colorDescription != null) View.VISIBLE else View.GONE
-                }
             }
             Timber.d("Timber: 리사이클러뷰 데이터 바인딩")
         }
