@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetNewProductsUseCase
-import kr.co.umc.nike.presentation.home.mapper.NewGoodMapper.toPresentation
 import kr.co.umc.nike.presentation.home.model.NewGood
+import kr.co.umc.nike.presentation.mapper.GoodMapper.toNewGood
 import kr.co.umc.nike.presentation.util.UiState
 import javax.inject.Inject
 
@@ -34,7 +34,7 @@ class HomeViewModel @Inject constructor(
 
             getNewProductsUseCase()
                 .map { products ->
-                    products.map { it.toPresentation() }  // ui 모델로 변환
+                    products.map { it.toNewGood() }  // ui 모델로 변환
                 }
                 .catch { e ->
                     _newGoodsState.value = UiState.Error(e.message ?: "Unknown Error")

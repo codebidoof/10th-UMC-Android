@@ -11,8 +11,8 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetAllProductsUseCase
 import kr.co.umc.nike.domain.usecase.UpdateWishStatusUseCase
-import kr.co.umc.nike.presentation.buy.mapper.GoodMapper.toPresentation
 import kr.co.umc.nike.presentation.buy.model.Good
+import kr.co.umc.nike.presentation.mapper.GoodMapper.toGood
 import kr.co.umc.nike.presentation.util.UiState
 import javax.inject.Inject
 
@@ -34,7 +34,7 @@ class GoodsViewModel @Inject constructor(
 
             getAllProductsUseCase()
                 .map { products ->
-                    products.map { it.toPresentation() }  // ui 모델로 변환
+                    products.map { it.toGood() }  // ui 모델로 변환
                 }
                 .catch { e ->
                     _goodsState.value = UiState.Error(e.message ?: "Unknown Error")
