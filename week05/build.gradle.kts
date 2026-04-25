@@ -2,7 +2,7 @@
 plugins {
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.kotlin.android) apply false
-    alias(libs.plugins.androidx.navigation.safeargs) apply false
-    id("com.google.devtools.ksp") version "2.1.10-1.0.29" apply false
-    id("com.google.dagger.hilt.android") version "2.57.1" apply false
+    alias(libs.plugins.navigation.safeargs) apply false
+    alias(libs.plugins.ksp) apply false
+    alias(libs.plugins.hilt) apply false
 }
