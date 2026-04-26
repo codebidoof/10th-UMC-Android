@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import kr.co.umc.nike.data.data_source.local.LocalDataSource
-import kr.co.umc.nike.data.mapper.ProductMapper.toDomain
+import kr.co.umc.nike.data.mapper.DtoMapper.toDomain
 import kr.co.umc.nike.domain.entity.ProductSummary
 import kr.co.umc.nike.domain.repository.ProductRepository
 import javax.inject.Inject

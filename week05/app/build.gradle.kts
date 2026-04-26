@@ -88,7 +88,7 @@ dependencies {
     implementation(libs.okHttp)
     implementation(libs.okHttp.logging.interceptor)
 
-
     //coil
     implementation(libs.coil)
+    implementation(libs.coil.network.okhttp)
 }

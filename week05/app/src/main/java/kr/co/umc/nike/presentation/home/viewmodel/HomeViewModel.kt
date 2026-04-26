@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetNewProductsUseCase
 import kr.co.umc.nike.presentation.home.model.NewGood
-import kr.co.umc.nike.presentation.mapper.GoodMapper.toNewGood
+import kr.co.umc.nike.presentation.mapper.PresentationMapper.toNewGood
 import kr.co.umc.nike.presentation.util.UiState
 import javax.inject.Inject
 

@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetAllProductsUseCase
 import kr.co.umc.nike.domain.usecase.UpdateWishStatusUseCase
 import kr.co.umc.nike.presentation.buy.model.Good
-import kr.co.umc.nike.presentation.mapper.GoodMapper.toGood
+import kr.co.umc.nike.presentation.mapper.PresentationMapper.toGood
 import kr.co.umc.nike.presentation.util.UiState
 import javax.inject.Inject
 

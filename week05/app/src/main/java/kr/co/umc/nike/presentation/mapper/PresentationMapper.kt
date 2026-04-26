@@ -8,7 +8,7 @@ import kr.co.umc.nike.presentation.wish.model.WishGood
 /**
  * Domain Layer ↔ Presentation Layer 변환 Mapper
  */
-object GoodMapper {
+object PresentationMapper {
 
     // ========== Domain → Presentation Model ==========
 

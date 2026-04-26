@@ -13,7 +13,7 @@ import androidx.room.PrimaryKey
             childColumns = ["categoryId"], // Product의 FK
             onDelete = ForeignKey.CASCADE
         )
-    ]
+    ],
 )
 data class ProductEntity(
     @PrimaryKey(autoGenerate = true)

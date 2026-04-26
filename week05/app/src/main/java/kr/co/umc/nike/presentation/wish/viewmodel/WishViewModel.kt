@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetWishProductsUseCase
-import kr.co.umc.nike.presentation.mapper.GoodMapper.toWishGood
+import kr.co.umc.nike.presentation.mapper.PresentationMapper.toWishGood
 import kr.co.umc.nike.presentation.util.UiState
 import kr.co.umc.nike.presentation.wish.model.WishGood
 import javax.inject.Inject

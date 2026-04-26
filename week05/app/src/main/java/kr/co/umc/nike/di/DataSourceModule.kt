@@ -17,4 +17,5 @@ abstract class DataSourceModule {
     abstract fun bindLocalDataSource(
         impl: LocalDataSourceImpl
     ): LocalDataSource
+
 }
