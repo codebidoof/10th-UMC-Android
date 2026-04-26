@@ -71,4 +71,13 @@ dependencies {
     implementation(libs.room.runtime)
     implementation(libs.room.ktx)
     ksp(libs.room.compiler)
+
+    //Retrofit
+    implementation(libs.retrofit)
+
+    //OkHttp
+    implementation(libs.okHttp)
+
+    //coil
+    implementation(libs.coil)
 }
