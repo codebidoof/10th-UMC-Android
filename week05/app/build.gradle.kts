@@ -1,9 +1,15 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.navigation.safeargs)
     alias(libs.plugins.ksp)
     alias(libs.plugins.hilt)
+}
+
+val localProperties = Properties().apply {
+    load(rootProject.file("local.properties").inputStream())
 }
 
 android {
@@ -20,6 +26,8 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField("String", "BASE_URL", "\"${localProperties["BASE_URL"]}\"")
     }
 
     buildTypes {
@@ -74,9 +82,12 @@ dependencies {
 
     //Retrofit
     implementation(libs.retrofit)
+    implementation(libs.retrofit.converter.gson)
 
     //OkHttp
     implementation(libs.okHttp)
+    implementation(libs.okHttp.logging.interceptor)
+
 
     //coil
     implementation(libs.coil)
