@@ -32,7 +32,6 @@ class ProfileFragment : Fragment() {
     private val viewModel: ProfileViewModel by viewModels()
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
-
     private lateinit var profileRVAdapter: ProfileRVAdapter
     private lateinit var profileRVDecorator: ProfileRVDecorator
 

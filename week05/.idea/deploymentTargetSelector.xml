@@ -4,10 +4,10 @@
     <selectionStates>
       <SelectionState runConfigName="app">
         <option name="selectionMode" value="DROPDOWN" />
-        <DropdownSelection timestamp="2026-03-21T04:35:24.849912100Z">
+        <DropdownSelection timestamp="2026-04-29T19:54:52.652811900Z">
           <Target type="DEFAULT_BOOT">
             <handle>
-              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Moon\.android\avd\Medium_Phone.avd" />
+              <DeviceId pluginId="LocalEmulator" identifier="path=C:\Users\Moon\.android\avd\GALAXY_S22.avd" />
             </handle>
           </Target>
         </DropdownSelection>
