@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/menu_home"
-        android:name="kr.co.umc.nike.presentation.home.ui.HomeFragment"
+        android:name="kr.co.umc.nike.presentation.xml.home.ui.HomeFragment"
         tools:layout="@layout/fragment_home">
 
     </fragment>
@@ -19,12 +19,12 @@
 
     <fragment
         android:id="@+id/menu_wish"
-        android:name="kr.co.umc.nike.presentation.wish.ui.WishFragment"
+        android:name="kr.co.umc.nike.presentation.xml.wish.ui.WishFragment"
         tools:layout="@layout/fragment_wish"/>
 
     <fragment
         android:id="@+id/menu_bag"
-        android:name="kr.co.umc.nike.presentation.bag.ui.BagFragment"
+        android:name="kr.co.umc.nike.presentation.xml.bag.ui.BagFragment"
         tools:layout="@layout/fragment_bag"/>
 
     <fragment

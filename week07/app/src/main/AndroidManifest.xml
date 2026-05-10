@@ -18,7 +18,7 @@
 
         <!--    컴포즈 기반 메인 액티비티    -->
         <activity
-            android:name=".ComposeMainActivity"
+            android:name=".presentation.ComposeMainActivity"
             android:exported="true"
             android:label="@string/title_activity_compose_main"
             android:theme="@style/Theme.Nike">
