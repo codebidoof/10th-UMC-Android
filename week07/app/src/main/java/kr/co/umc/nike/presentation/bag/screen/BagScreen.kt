@@ -14,7 +14,7 @@ fun BagScreen(
     hasProducts: Boolean = false
 ) {
     if (hasProducts) {
-
+        /* 추후 구현 예정 */
     } else {
         Box(
             modifier = Modifier.fillMaxSize(),
