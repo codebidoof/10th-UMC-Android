@@ -1,4 +1,4 @@
-package kr.co.umc.nike.presentation
+package kr.co.umc.nike
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -11,6 +11,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import kr.co.umc.nike.presentation.NikeApp
 import kr.co.umc.nike.ui.theme.NikeTheme
 
 class ComposeMainActivity : ComponentActivity() {
@@ -19,12 +20,7 @@ class ComposeMainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             NikeTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    Greeting(
-                        name = "Android",
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                NikeApp()
             }
         }
     }

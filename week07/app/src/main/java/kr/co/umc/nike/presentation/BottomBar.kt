@@ -3,7 +3,9 @@ package kr.co.umc.nike.presentation
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.LocalRippleConfiguration
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarDefaults
 import androidx.compose.material3.NavigationBarItem
 import androidx.compose.material3.NavigationBarItemDefaults
 import androidx.compose.material3.Text
@@ -22,10 +24,13 @@ fun BottomBar(
     currentDestination: AppDestination?, // 현재 선택된 탭
     onNavigate: (AppDestination) -> Unit // 클릭 이벤트 콜백
 ) {
+
     CompositionLocalProvider(
-        LocalRippleConfiguration provides null
+        LocalRippleConfiguration provides null // 리플효과 제거
     ) {
-        NavigationBar {
+        NavigationBar(
+            containerColor = MaterialTheme.colorScheme.surface
+        ) {
             destinations.forEach { destination ->
                 NavigationBarItem(
                     selected = destination == currentDestination,

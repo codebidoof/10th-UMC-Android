@@ -1,4 +1,4 @@
-package kr.co.umc.nike
+package kr.co.umc.nike.presentation.xml
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
@@ -8,6 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
+import kr.co.umc.nike.R
 import kr.co.umc.nike.databinding.ActivityMainBinding
 
 @AndroidEntryPoint

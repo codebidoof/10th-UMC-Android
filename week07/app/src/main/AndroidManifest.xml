@@ -18,7 +18,7 @@
 
         <!--    컴포즈 기반 메인 액티비티    -->
         <activity
-            android:name=".presentation.ComposeMainActivity"
+            android:name=".ComposeMainActivity"
             android:exported="true"
             android:label="@string/title_activity_compose_main"
             android:theme="@style/Theme.Nike">
@@ -33,7 +33,7 @@
 
         <!--   xml 기반 메인 액티비티    -->
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.xml.MainActivity"
             android:exported="false">
         </activity>
     </application>

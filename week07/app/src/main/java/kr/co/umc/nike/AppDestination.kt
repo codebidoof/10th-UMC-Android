@@ -14,7 +14,7 @@ sealed interface AppDestination {
     /**
      * BottomBar에 들어갈 아이콘 Drawable 리소스와 이름입니다.
      */
-    @get:DrawableRes val icon: Int
+    val icon: Int
     val label: String
 
 
