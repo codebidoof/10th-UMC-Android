@@ -1,12 +1,32 @@
 package kr.co.umc.nike.presentation.bag.screen
 
-import androidx.compose.material3.Text
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import kr.co.umc.nike.R
+import kr.co.umc.nike.presentation.bag.component.NonePlaceHolder
 
 @Composable
-fun BagScreen()  {
-    Text("장바구니 화면")
+fun BagScreen(
+    hasProducts: Boolean = false
+) {
+    if (hasProducts) {
+
+    } else {
+        Box(
+            modifier = Modifier.fillMaxSize(),
+            contentAlignment = Alignment.Center
+        ) {
+            NonePlaceHolder(
+                iconRes = R.drawable.bag_circle,
+                text = "장바구니가 비어 있습니다.\n제품을 추가하면 여기에 표시됩니다."
+            )
+        }
+    }
+
 }
 
 @Preview(showBackground = true)
