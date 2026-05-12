@@ -1,6 +1,5 @@
 package kr.co.umc.nike.navigation
 
-import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.padding
@@ -9,17 +8,15 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavDestination.Companion.hasRoute
 import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import kr.co.umc.nike.navigation.AppDestination
-import kr.co.umc.nike.presentation.bag.screen.BagScreen
-import kr.co.umc.nike.presentation.buy.screen.BuyScreen
-import kr.co.umc.nike.presentation.home.screen.HomeScreen
-import kr.co.umc.nike.presentation.profile.screen.ProfileScreen
-import kr.co.umc.nike.presentation.wish.screen.WishScreen
+import kr.co.umc.nike.R
+import kr.co.umc.nike.navigation.model.BottomBarItem
+import kr.co.umc.nike.navigation.route.AppGraph
+import kr.co.umc.nike.navigation.route.MainDestination
+import kr.co.umc.nike.navigation.util.mainGraph
+import kr.co.umc.nike.navigation.util.toMainDestination
 import kr.co.umc.nike.ui.theme.NikeTheme
 
 /**
@@ -34,31 +31,29 @@ import kr.co.umc.nike.ui.theme.NikeTheme
 fun MainScreen() {
     val navController = rememberNavController()
 
-    // 바텀 내비게이션 목적지 리스트
-    val bottomDestinations = listOf(
-        AppDestination.Home,
-        AppDestination.Buy,
-        AppDestination.WishList,
-        AppDestination.Bag,
-        AppDestination.Profile
-    )
-
     // 현재 네비게이션 상태를 관찰하는 state 변수
     val navBackStackEntry by navController.currentBackStackEntryAsState()
 
-    // 목적지 리스트를 순회하며 현재 화면을 찾음
-    val currentDestination = bottomDestinations.find { destination ->
-        navBackStackEntry
-            ?.destination
-            ?.hasRoute(destination::class) == true
-    }
+    // 현재 백스택 최상단의 Destination
+    val currentDestination = navBackStackEntry?.destination.toMainDestination()
+
+    // 바텀 내비게이션 아이템 리스트
+    val bottomBarItems = listOf(
+        BottomBarItem(MainDestination.Home, R.drawable.house_simple, "홈"),
+        BottomBarItem(MainDestination.Buy, R.drawable.list_magnifying_glass, "구매"),
+        BottomBarItem(MainDestination.WishList, R.drawable.heart_straight, "위시리스트"),
+        BottomBarItem(MainDestination.Bag, R.drawable.bag_simple, "장바구니"),
+        BottomBarItem(MainDestination.Profile, R.drawable.user, "프로필")
+    )
 
     Scaffold(
         bottomBar = {
             BottomBar(
-                destinations = bottomDestinations,
+                items = bottomBarItems,
                 currentDestination = currentDestination,
                 onNavigate = { destination ->
+
+                    // BottomBar 탭 전환 시 각 destination의 상태를 유지
                     navController.navigate(destination) {
                         popUpTo(navController.graph.startDestinationId) {
                             saveState = true
@@ -73,43 +68,17 @@ fun MainScreen() {
 
         NavHost(
             navController = navController,
-            startDestination = AppDestination.Home,
+            startDestination = AppGraph.MainGraph,
             modifier = Modifier.padding(innerPadding),
 
-            // 전환 속도를 더 빠르게 설정
-            enterTransition = {
-                fadeIn(animationSpec = tween(200))
-            },
-            exitTransition = {
-                fadeOut(animationSpec = tween(200))
-            },
-            popEnterTransition = {
-                fadeIn(animationSpec = tween(200))
-            },
-            popExitTransition = {
-                fadeOut(animationSpec = tween(200))
-            }
+            // 전환 속도 설정
+            enterTransition = { fadeIn() },
+            exitTransition = { fadeOut() },
+            popEnterTransition = { fadeIn() },
+            popExitTransition = { fadeOut() }
 
         ) {
-            composable<AppDestination.Home>{
-                HomeScreen()
-            }
-
-            composable<AppDestination.Buy>{
-                BuyScreen()
-            }
-
-            composable<AppDestination.WishList>{
-                WishScreen()
-            }
-
-            composable<AppDestination.Bag>{
-                BagScreen()
-            }
-
-            composable<AppDestination.Profile>{
-                ProfileScreen()
-            }
+            mainGraph()
         }
     }
 }

@@ -13,15 +13,19 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import kr.co.umc.nike.navigation.AppDestination
+import androidx.navigation.NavDestination
+import androidx.navigation.NavDestination.Companion.hasRoute
+import kr.co.umc.nike.R
+import kr.co.umc.nike.navigation.model.BottomBarItem
+import kr.co.umc.nike.navigation.route.MainDestination
 import kr.co.umc.nike.ui.theme.NikeTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomBar(
-    destinations: List<AppDestination>, // 탭 목록
-    currentDestination: AppDestination?, // 현재 선택된 탭
-    onNavigate: (AppDestination) -> Unit // 클릭 이벤트 콜백
+    items: List<BottomBarItem>, // 적용할 ui 모델
+    currentDestination: MainDestination?, // 현재 선택된 탭
+    onNavigate: (MainDestination) -> Unit // 클릭 이벤트 콜백
 ) {
 
     CompositionLocalProvider(
@@ -30,20 +34,21 @@ fun BottomBar(
         NavigationBar(
             containerColor = MaterialTheme.colorScheme.surface
         ) {
-            destinations.forEach { destination ->
+            // 내비게이션 바에 각 탭 배치
+            items.forEach { item ->
                 NavigationBarItem(
-                    selected = destination == currentDestination,
-                    onClick = { onNavigate(destination) },
+                    selected = item.destination == currentDestination,
+                    onClick = { onNavigate(item.destination) },
                     colors = NavigationBarItemDefaults.colors(
                         indicatorColor = Color.Transparent
                     ),
                     icon = {
                         Icon(
-                            painter = painterResource(id = destination.icon),
-                            contentDescription = destination.label
+                            painter = painterResource(id = item.icon),
+                            contentDescription = item.label
                         )
                     },
-                    label = { Text(destination.label) }
+                    label = { Text(item.label) }
                 )
             }
         }
@@ -52,26 +57,19 @@ fun BottomBar(
 
 @Preview(showBackground = true)
 @Composable
-fun BottomBarPreview() {
-    val destinations = listOf(
-        AppDestination.Home,
-        AppDestination.Buy,
-        AppDestination.WishList,
-        AppDestination.Bag,
-        AppDestination.Profile
+private fun BottomBarPreview() {
+    val items = listOf(
+        BottomBarItem(MainDestination.Home, R.drawable.house_simple, "홈"),
+        BottomBarItem(MainDestination.Buy, R.drawable.list_magnifying_glass, "구매"),
+        BottomBarItem(MainDestination.WishList, R.drawable.heart_straight, "위시리스트"),
+        BottomBarItem(MainDestination.Bag, R.drawable.bag_simple, "장바구니"),
+        BottomBarItem(MainDestination.Profile, R.drawable.user, "프로필")
     )
     NikeTheme {
         BottomBar(
-            destinations = destinations,
-            currentDestination = AppDestination.Home,
+            items = items,
+            currentDestination = MainDestination.Home,
             onNavigate = {}
         )
     }
 }
-
-
-
-
-
-
-
