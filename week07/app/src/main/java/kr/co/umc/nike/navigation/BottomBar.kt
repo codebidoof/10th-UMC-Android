@@ -13,8 +13,6 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.navigation.NavDestination
-import androidx.navigation.NavDestination.Companion.hasRoute
 import kr.co.umc.nike.R
 import kr.co.umc.nike.navigation.model.BottomBarItem
 import kr.co.umc.nike.navigation.route.MainDestination

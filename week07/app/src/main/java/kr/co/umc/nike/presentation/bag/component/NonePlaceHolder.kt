@@ -20,19 +20,22 @@ import kr.co.umc.nike.ui.theme.NikeTheme
 @Composable
 fun NonePlaceHolder(
     iconRes: Int,
-    text: String
+    text: String,
+    modifier: Modifier = Modifier
 ) {
     Column(
+        modifier = modifier,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Image(
             painter = painterResource(iconRes),
             contentDescription = "가방 아이콘"
         )
+
         Spacer(
-            modifier = Modifier
-                .height(27.dp)
+            modifier = Modifier.height(27.dp)
         )
+
         Text(
             text = text,
             color = Color.Black,
@@ -41,7 +44,6 @@ fun NonePlaceHolder(
             lineHeight = 16.sp
         )
     }
-
 }
 
 @Preview(showBackground = true)
