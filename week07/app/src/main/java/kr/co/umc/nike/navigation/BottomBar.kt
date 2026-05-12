@@ -1,4 +1,4 @@
-package kr.co.umc.nike.presentation
+package kr.co.umc.nike.navigation
 
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -13,7 +13,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
-import kr.co.umc.nike.AppDestination
+import kr.co.umc.nike.navigation.AppDestination
 import kr.co.umc.nike.ui.theme.NikeTheme
 
 @OptIn(ExperimentalMaterial3Api::class)

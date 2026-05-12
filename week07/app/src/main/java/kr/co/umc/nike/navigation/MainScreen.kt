@@ -1,4 +1,4 @@
-package kr.co.umc.nike.presentation
+package kr.co.umc.nike.navigation
 
 import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
@@ -14,7 +14,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import kr.co.umc.nike.AppDestination
+import kr.co.umc.nike.navigation.AppDestination
 import kr.co.umc.nike.presentation.bag.screen.BagScreen
 import kr.co.umc.nike.presentation.buy.screen.BuyScreen
 import kr.co.umc.nike.presentation.home.screen.HomeScreen
@@ -31,7 +31,7 @@ import kr.co.umc.nike.ui.theme.NikeTheme
  * - 홈, 구매, 위시리스트, 장바구니, 프로필 등 각 화면 간의 라우팅을 처리하는 [NavHost]를 관리합니다.
  */
 @Composable
-fun NikeApp() {
+fun MainScreen() {
     val navController = rememberNavController()
 
     // 바텀 내비게이션 목적지 리스트
@@ -118,6 +118,6 @@ fun NikeApp() {
 @Composable
 fun NikeAppPreview() {
     NikeTheme {
-        NikeApp()
+        MainScreen()
     }
 }

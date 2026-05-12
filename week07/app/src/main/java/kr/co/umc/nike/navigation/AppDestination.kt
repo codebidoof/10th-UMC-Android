@@ -1,8 +1,7 @@
-package kr.co.umc.nike
+package kr.co.umc.nike.navigation
 
-import androidx.annotation.DrawableRes
 import kotlinx.serialization.Serializable
-
+import kr.co.umc.nike.R
 
 /**
  * 애플리케이션 내의 최상위 탐색 대상(Navigation Destination)을 정의하는 인터페이스입니다.
