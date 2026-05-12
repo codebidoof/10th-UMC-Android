@@ -1,7 +1,5 @@
 package kr.co.umc.nike.navigation
 
-import androidx.compose.animation.fadeIn
-import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -15,6 +13,8 @@ import kr.co.umc.nike.R
 import kr.co.umc.nike.navigation.model.BottomBarItem
 import kr.co.umc.nike.navigation.route.AppGraph
 import kr.co.umc.nike.navigation.route.MainDestination
+import kr.co.umc.nike.navigation.util.NavTransaction.fadeInTransition
+import kr.co.umc.nike.navigation.util.NavTransaction.fadeOutTransition
 import kr.co.umc.nike.navigation.util.mainGraph
 import kr.co.umc.nike.navigation.util.navigateToBottomBarDestination
 import kr.co.umc.nike.navigation.util.toMainDestination
@@ -65,10 +65,10 @@ fun MainScreen() {
             modifier = Modifier.padding(innerPadding),
 
             // 전환 속도 설정
-            enterTransition = { fadeIn() },
-            exitTransition = { fadeOut() },
-            popEnterTransition = { fadeIn() },
-            popExitTransition = { fadeOut() }
+            enterTransition = fadeInTransition() ,
+            exitTransition = fadeOutTransition(),
+            popEnterTransition = fadeInTransition(),
+            popExitTransition = fadeOutTransition()
 
         ) {
             mainGraph(navController)
