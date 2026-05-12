@@ -16,6 +16,7 @@ import kr.co.umc.nike.navigation.model.BottomBarItem
 import kr.co.umc.nike.navigation.route.AppGraph
 import kr.co.umc.nike.navigation.route.MainDestination
 import kr.co.umc.nike.navigation.util.mainGraph
+import kr.co.umc.nike.navigation.util.navigateToBottomBarDestination
 import kr.co.umc.nike.navigation.util.toMainDestination
 import kr.co.umc.nike.ui.theme.NikeTheme
 
@@ -52,15 +53,7 @@ fun MainScreen() {
                 items = bottomBarItems,
                 currentDestination = currentDestination,
                 onNavigate = { destination ->
-
-                    // BottomBar 탭 전환 시 각 destination의 상태를 유지
-                    navController.navigate(destination) {
-                        popUpTo(navController.graph.startDestinationId) {
-                            saveState = true
-                        }
-                        launchSingleTop = true
-                        restoreState = true
-                    }
+                    navController.navigateToBottomBarDestination(destination)
                 }
             )
         }
@@ -78,7 +71,7 @@ fun MainScreen() {
             popExitTransition = { fadeOut() }
 
         ) {
-            mainGraph()
+            mainGraph(navController)
         }
     }
 }

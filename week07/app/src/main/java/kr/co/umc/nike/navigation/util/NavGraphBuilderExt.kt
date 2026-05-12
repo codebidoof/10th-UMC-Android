@@ -1,5 +1,6 @@
 package kr.co.umc.nike.navigation.util
 
+import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.navigation
@@ -17,7 +18,9 @@ import kr.co.umc.nike.presentation.wish.screen.WishScreen
  * 그래프의 목적지(Destination)와
  * 각 목적지에 대응하는 화면(Composable) 간의 매핑을 정의합니다.
  */
-fun NavGraphBuilder.mainGraph() {
+fun NavGraphBuilder.mainGraph(
+    navController: NavController
+) {
 
     navigation<AppGraph.MainGraph>(
         startDestination = MainDestination.Home
@@ -36,7 +39,11 @@ fun NavGraphBuilder.mainGraph() {
         }
 
         composable<MainDestination.Bag> {
-            BagScreen()
+            BagScreen(
+                onOrderClick = {
+                    navController.navigateToBottomBarDestination(MainDestination.Buy)
+                }
+            )
         }
 
         composable<MainDestination.Profile> {

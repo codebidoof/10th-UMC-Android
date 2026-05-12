@@ -11,10 +11,12 @@ import androidx.compose.ui.unit.dp
 import kr.co.umc.nike.R
 import kr.co.umc.nike.presentation.bag.component.BottomActionButton
 import kr.co.umc.nike.presentation.bag.component.NonePlaceHolder
+import kr.co.umc.nike.ui.theme.NikeTheme
 
 @Composable
 fun BagScreen(
-    hasProducts: Boolean = false
+    hasProducts: Boolean = false,
+    onOrderClick: () -> Unit
 ) {
     Box(
         modifier = Modifier.fillMaxSize()
@@ -36,7 +38,7 @@ fun BagScreen(
 
         BottomActionButton(
             text = "주문하기",
-            onClick = {},
+            onClick =  onOrderClick, //구매하기 화면으로 이동
             modifier = Modifier
                 .align(Alignment.BottomCenter)
                 .padding(horizontal = 40.dp, vertical = 22.dp)
@@ -47,5 +49,10 @@ fun BagScreen(
 @Preview(showBackground = true)
 @Composable
 fun BagScreenPreview() {
-    BagScreen()
+    NikeTheme {
+        BagScreen(
+            hasProducts = false,
+            onOrderClick = {}
+        )
+    }
 }
