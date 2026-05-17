@@ -6,6 +6,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.text.PlatformTextStyle
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
@@ -24,6 +26,13 @@ fun GoodInfo(
     modifier: Modifier = Modifier,
     textSize: TextUnit = 14.sp,
 ) {
+
+    // 멀티라인 텍스트 줄간격 및 불필요한 font padding 제거
+    val baseTextStyle = TextStyle(
+        platformStyle = PlatformTextStyle(includeFontPadding = false),
+        lineHeight = textSize * 1.2
+    )
+
     Column(
         modifier = modifier,
         horizontalAlignment = Alignment.Start,
@@ -33,7 +42,7 @@ fun GoodInfo(
             text = name,
             fontSize = textSize,
             color = Black,
-            lineHeight = (textSize.value * 1.2).sp,
+            style = baseTextStyle,
             fontWeight = FontWeight.Medium
         )
 
@@ -41,20 +50,23 @@ fun GoodInfo(
             text = description,
             fontSize = textSize,
             color = CustomGray,
+            style = baseTextStyle,
             lineHeight = (textSize.value * 1.2).sp,
         )
 
         Text(
             text = colorNum,
             fontSize = textSize,
-            color = CustomGray
+            color = CustomGray,
+            style = baseTextStyle,
         )
 
         Text(
             text = price,
             fontSize = textSize,
             color = Black,
-            fontWeight = FontWeight.Medium
+            fontWeight = FontWeight.Medium,
+            style = baseTextStyle,
         )
     }
 }
