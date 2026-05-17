@@ -6,7 +6,7 @@ data class WishGood(
     val id: Int,
     @field:DrawableRes val goodImage: Int,
     val goodName: String,
-    val description: String? = null,
-    val colorDescription: String? = null,
+    val description: String = "",
+    val colorDescription: String = "",
     val goodPrice: String,
 )

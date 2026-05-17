@@ -21,7 +21,7 @@ class WishViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _wishGoodsState = MutableStateFlow<UiState<List<WishGood>>>(UiState.Idle)
-    val wishGoodsState: Flow<UiState<List<WishGood>>> = _wishGoodsState.asStateFlow()
+    val wishGoodsState = _wishGoodsState.asStateFlow()
 
     init {
         loadWishProducts()
