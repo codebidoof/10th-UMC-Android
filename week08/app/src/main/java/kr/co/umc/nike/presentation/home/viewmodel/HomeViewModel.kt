@@ -21,7 +21,7 @@ class HomeViewModel @Inject constructor(
 ): ViewModel()  {
 
     private val _newGoodsState = MutableStateFlow<UiState<List<NewGood>>>(UiState.Idle)
-    val newGoodsState: Flow<UiState<List<NewGood>>> = _newGoodsState.asStateFlow()
+    val newGoodsState = _newGoodsState.asStateFlow()
 
 
     init {
