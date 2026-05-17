@@ -65,7 +65,7 @@ fun MainScreen() {
             modifier = Modifier.padding(innerPadding),
 
             // 전환 속도 설정
-            enterTransition = fadeInTransition() ,
+            enterTransition = fadeInTransition(),
             exitTransition = fadeOutTransition(),
             popEnterTransition = fadeInTransition(),
             popExitTransition = fadeOutTransition()
