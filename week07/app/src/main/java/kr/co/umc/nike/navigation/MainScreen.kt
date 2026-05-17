@@ -38,19 +38,10 @@ fun MainScreen() {
     // 현재 백스택 최상단의 Destination
     val currentDestination = navBackStackEntry?.destination.toMainDestination()
 
-    // 바텀 내비게이션 아이템 리스트
-    val bottomBarItems = listOf(
-        BottomBarItem(MainDestination.Home, R.drawable.house_simple, "홈"),
-        BottomBarItem(MainDestination.Buy, R.drawable.list_magnifying_glass, "구매"),
-        BottomBarItem(MainDestination.WishList, R.drawable.heart_straight, "위시리스트"),
-        BottomBarItem(MainDestination.Bag, R.drawable.bag_simple, "장바구니"),
-        BottomBarItem(MainDestination.Profile, R.drawable.user, "프로필")
-    )
-
     Scaffold(
         bottomBar = {
             BottomBar(
-                items = bottomBarItems,
+                items = BottomBarItem.entries,
                 currentDestination = currentDestination,
                 onNavigate = { destination ->
                     navController.navigateToBottomBarDestination(destination)

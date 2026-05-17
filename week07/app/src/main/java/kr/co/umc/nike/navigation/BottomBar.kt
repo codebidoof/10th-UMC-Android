@@ -12,16 +12,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
-import kr.co.umc.nike.R
 import kr.co.umc.nike.navigation.model.BottomBarItem
 import kr.co.umc.nike.navigation.route.MainDestination
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kotlin.enums.EnumEntries
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun BottomBar(
-    items: List<BottomBarItem>, // 적용할 ui 모델
+    items: EnumEntries<BottomBarItem>, // 적용할 ui 모델
     currentDestination: MainDestination?, // 현재 선택된 탭
     onNavigate: (MainDestination) -> Unit // 클릭 이벤트 콜백
 ) {
@@ -53,21 +51,21 @@ fun BottomBar(
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-private fun BottomBarPreview() {
-    val items = listOf(
-        BottomBarItem(MainDestination.Home, R.drawable.house_simple, "홈"),
-        BottomBarItem(MainDestination.Buy, R.drawable.list_magnifying_glass, "구매"),
-        BottomBarItem(MainDestination.WishList, R.drawable.heart_straight, "위시리스트"),
-        BottomBarItem(MainDestination.Bag, R.drawable.bag_simple, "장바구니"),
-        BottomBarItem(MainDestination.Profile, R.drawable.user, "프로필")
-    )
-    NikeTheme {
-        BottomBar(
-            items = items,
-            currentDestination = MainDestination.Home,
-            onNavigate = {}
-        )
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//private fun BottomBarPreview() {
+//    val items = listOf(
+//        BottomBarItem(MainDestination.Home, R.drawable.house_simple, "홈"),
+//        BottomBarItem(MainDestination.Buy, R.drawable.list_magnifying_glass, "구매"),
+//        BottomBarItem(MainDestination.WishList, R.drawable.heart_straight, "위시리스트"),
+//        BottomBarItem(MainDestination.Bag, R.drawable.bag_simple, "장바구니"),
+//        BottomBarItem(MainDestination.Profile, R.drawable.user, "프로필")
+//    )
+//    NikeTheme {
+//        BottomBar(
+//            items = items,
+//            currentDestination = MainDestination.Home,
+//            onNavigate = {}
+//        )
+//    }
+//}
