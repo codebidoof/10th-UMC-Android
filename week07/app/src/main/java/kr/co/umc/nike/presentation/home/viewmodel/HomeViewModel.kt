@@ -1,4 +1,4 @@
-package kr.co.umc.nike.presentation.xml.home.viewmodel
+package kr.co.umc.nike.presentation.home.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -10,8 +10,8 @@ import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetNewProductsUseCase
-import kr.co.umc.nike.presentation.xml.home.model.NewGood
-import kr.co.umc.nike.presentation.xml.mapper.PresentationMapper.toNewGood
+import kr.co.umc.nike.presentation.home.model.NewGood
+import kr.co.umc.nike.presentation.mapper.PresentationMapper.toNewGood
 import kr.co.umc.nike.presentation.util.UiState
 import javax.inject.Inject
 

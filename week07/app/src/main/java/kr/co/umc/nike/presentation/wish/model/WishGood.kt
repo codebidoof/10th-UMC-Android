@@ -1,4 +1,4 @@
-package kr.co.umc.nike.presentation.xml.wish.model
+package kr.co.umc.nike.presentation.wish.model
 
 import androidx.annotation.DrawableRes
 

@@ -1,4 +1,4 @@
-package kr.co.umc.nike.presentation.xml.buy.viewmodel
+package kr.co.umc.nike.presentation.buy.viewmodel
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -11,9 +11,9 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.usecase.GetAllProductsUseCase
 import kr.co.umc.nike.domain.usecase.UpdateWishStatusUseCase
-import kr.co.umc.nike.presentation.xml.buy.model.Good
-import kr.co.umc.nike.presentation.xml.mapper.PresentationMapper.toGood
+import kr.co.umc.nike.presentation.mapper.PresentationMapper.toGood
 import kr.co.umc.nike.presentation.util.UiState
+import kr.co.umc.nike.presentation.buy.model.Good
 import javax.inject.Inject
 
 @HiltViewModel

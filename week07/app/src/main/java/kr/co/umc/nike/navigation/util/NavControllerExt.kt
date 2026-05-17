@@ -18,7 +18,7 @@ fun NavController.navigateToBottomBarDestination(
     destination: MainDestination
 ) {
     navigate(destination) {
-        popUpTo(graph.startDestinationId) {
+        popUpTo<MainDestination.Home> {
             saveState = true
         }
         launchSingleTop = true

@@ -30,12 +30,6 @@
             </intent-filter>
 
         </activity>
-
-        <!--   xml 기반 메인 액티비티    -->
-        <activity
-            android:name=".presentation.xml.MainActivity"
-            android:exported="false">
-        </activity>
     </application>
 
 </manifest>

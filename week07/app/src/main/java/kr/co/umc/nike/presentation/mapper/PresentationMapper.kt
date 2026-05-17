@@ -1,9 +1,9 @@
-package kr.co.umc.nike.presentation.xml.mapper
+package kr.co.umc.nike.presentation.mapper
 
 import kr.co.umc.nike.domain.entity.ProductSummary
-import kr.co.umc.nike.presentation.xml.buy.model.Good
-import kr.co.umc.nike.presentation.xml.home.model.NewGood
-import kr.co.umc.nike.presentation.xml.wish.model.WishGood
+import kr.co.umc.nike.presentation.buy.model.Good
+import kr.co.umc.nike.presentation.home.model.NewGood
+import kr.co.umc.nike.presentation.wish.model.WishGood
 
 /**
  * Domain Layer ↔ Presentation Layer 변환 Mapper

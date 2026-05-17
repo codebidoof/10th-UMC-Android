@@ -1,4 +1,4 @@
-package kr.co.umc.nike.presentation.xml.profile.model
+package kr.co.umc.nike.presentation.profile.model
 
 data class Profile(
     val id: Int,
