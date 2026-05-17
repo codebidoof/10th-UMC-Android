@@ -19,11 +19,12 @@ import kr.co.umc.nike.presentation.wish.screen.WishScreen
  * 각 목적지에 대응하는 화면(Composable) 간의 매핑을 정의합니다.
  */
 fun NavGraphBuilder.mainGraph(
-    navController: NavController
+    navController: NavController,
+    start: MainDestination = MainDestination.Home
 ) {
 
     navigation<AppGraph.MainGraph>(
-        startDestination = MainDestination.Home
+        startDestination = start
     ) {
 
         composable<MainDestination.Home> {

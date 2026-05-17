@@ -71,7 +71,7 @@ fun MainScreen() {
             popExitTransition = fadeOutTransition()
 
         ) {
-            mainGraph(navController)
+            mainGraph(navController, MainDestination.Home)
         }
     }
 }
