@@ -23,15 +23,15 @@ fun GoodsGrid(
     onHeartClicked: (Int) -> Unit
 ) {
     // 가로 세로 모드 대응
-    val configuration = LocalConfiguration.current
-
-    val columns = when (configuration.orientation) {
-        Configuration.ORIENTATION_LANDSCAPE -> 4
-        else -> 2
-    }
+//    val configuration = LocalConfiguration.current
+//
+//    val columns = when (configuration.orientation) {
+//        Configuration.ORIENTATION_LANDSCAPE -> 4
+//        else -> 2
+//    }
 
     LazyVerticalGrid(
-        columns = GridCells.Fixed(columns),
+        columns = GridCells.Fixed(2),
         modifier = modifier,
         contentPadding = PaddingValues(
             horizontal = 20.dp,
@@ -47,7 +47,6 @@ fun GoodsGrid(
             GoodCard(
                 good = good,
                 onHeartClicked = onHeartClicked,
-                modifier = Modifier.fillMaxWidth()
             )
         }
     }

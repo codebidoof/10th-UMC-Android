@@ -26,7 +26,6 @@ import kr.co.umc.nike.R
 import kr.co.umc.nike.presentation.GoodInfo
 import kr.co.umc.nike.presentation.buy.model.Good
 import kr.co.umc.nike.ui.theme.NikeTheme
-import kr.co.umc.nike.ui.theme.Orange500
 
 @Composable
 fun GoodCard(
@@ -45,7 +44,8 @@ fun GoodCard(
             Image(
                 painter = painterResource(good.goodImage),
                 contentDescription = "상품 사진",
-                modifier = Modifier.fillMaxSize()
+                modifier = Modifier.fillMaxSize(),
+                contentScale = ContentScale.Crop
             )
 
             HeartCircle(
