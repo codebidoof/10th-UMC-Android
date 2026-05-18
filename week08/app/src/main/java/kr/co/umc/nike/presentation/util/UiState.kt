@@ -2,6 +2,12 @@ package kr.co.umc.nike.presentation.util
 
 import androidx.compose.runtime.Composable
 
+/**
+ * UI의 다양한 상태(Idle, Loading, Success, Error)를 모델링하는 공통 Sealed Class입니다.
+ * 주로 비동기 작업의 진행 상황에 따라 UI를 분기 처리할 때 사용됩니다.
+ *
+ * @param T 성공(Success) 상태일 때 보유할 데이터의 타입입니다.
+ */
 sealed class UiState<out T> {
     data object Idle : UiState<Nothing>()
     data object Loading : UiState<Nothing>()

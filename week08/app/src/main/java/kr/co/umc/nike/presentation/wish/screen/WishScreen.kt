@@ -13,6 +13,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.lazy.items
 import kr.co.umc.nike.R
 import kr.co.umc.nike.presentation.util.UiState
+import kr.co.umc.nike.presentation.util.consume
 import kr.co.umc.nike.presentation.wish.component.Title
 import kr.co.umc.nike.presentation.wish.component.WishGoodCard
 import kr.co.umc.nike.presentation.wish.model.WishGood
@@ -41,15 +42,16 @@ fun WishScreenContent(
         }
 
         item {
-            when (wishGoodState) {
-                is UiState.Idle -> {
-                    Unit
+            wishGoodState.consume {
+                idle {
+                    /* Idle 처리 가능 */
                 }
 
-                is UiState.Loading -> {
+                loading {
                     /* 로딩 컴포저블 호출 */
                 }
-                is UiState.Success ->  {
+
+                success { goods ->
                     LazyRow(
                         contentPadding = PaddingValues(
                             horizontal = 14.dp
@@ -57,14 +59,15 @@ fun WishScreenContent(
                         horizontalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
                         items(
-                            wishGoodState.data,
+                            goods,
                             key = { good -> good.id }
                         ) { good ->
                             WishGoodCard(good)
                         }
                     }
                 }
-                is UiState.Error -> {
+
+                error {
                     /* 에러 처리 가능 */
                 }
             }

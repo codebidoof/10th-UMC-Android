@@ -23,6 +23,7 @@ import kr.co.umc.nike.presentation.home.component.TopTitle
 import kr.co.umc.nike.presentation.home.model.NewGood
 import kr.co.umc.nike.presentation.home.viewmodel.HomeViewModel
 import kr.co.umc.nike.presentation.util.UiState
+import kr.co.umc.nike.presentation.util.consume
 import kr.co.umc.nike.ui.theme.NikeTheme
 
 @Composable
@@ -77,14 +78,16 @@ private fun HomeContent(
         }
 
         item {
-            when (newGoodsState) {
-                is UiState.Idle -> Unit
+            newGoodsState.consume {
+                idle {
+                    /* Idle 처리 가능 */
+                }
 
-                is UiState.Loading -> {
+                loading {
                     /* 로딩 컴포저블 호출 */
                 }
 
-                is UiState.Success -> {
+                success { goods ->
                     LazyRow(
                         contentPadding = PaddingValues(
                             vertical = 22.dp,
@@ -93,7 +96,7 @@ private fun HomeContent(
                         horizontalArrangement = Arrangement.spacedBy(6.dp)
                     ) {
                         items(
-                            newGoodsState.data,
+                            goods,
                             key = { good -> good.id }
                         ) { good ->
                             NewGoodCard(good)
@@ -101,7 +104,7 @@ private fun HomeContent(
                     }
                 }
 
-                is UiState.Error -> {
+                error {
                     /* 에러 처리 가능 */
                 }
             }

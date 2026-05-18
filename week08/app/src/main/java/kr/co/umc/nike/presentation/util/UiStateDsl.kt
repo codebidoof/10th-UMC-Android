@@ -6,7 +6,7 @@ import androidx.compose.runtime.Composable
  * UI 레이어에서 [UiState]의 상태 변화를 처리하기 위한 DSL(Domain-Specific Language) 빌더 클래스입니다.
  *
  * 이 클래스는 데이터 기반 작업의 각 상태(Idle, Loading, Success, Error)에 따라
- * UI가 어떻게 렌더링되어야 하는지를 선언적인 방식으로 정의할 수 있는 기능을 제공합니다.
+ * UI가 어떻게 렌더링되어야 하는지를 선언적인 방식으로 정의할 수 있는 API을 제공합니다.
  *
  * @param T [UiState.Success] 상태일 때 전달받는 데이터의 타입입니다.
  */
