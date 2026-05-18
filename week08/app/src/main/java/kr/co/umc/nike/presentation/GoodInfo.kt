@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.sp
 import kr.co.umc.nike.ui.theme.Black
 import kr.co.umc.nike.ui.theme.CustomGray
 import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.umc.nike.ui.theme.Orange500
 
 @Composable
 fun GoodInfo(
@@ -24,6 +25,7 @@ fun GoodInfo(
     colorNum: String,
     price: String,
     modifier: Modifier = Modifier,
+    isBestSeller: Boolean = false,
     textSize: TextUnit = 14.sp,
 ) {
 
@@ -38,6 +40,16 @@ fun GoodInfo(
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.spacedBy(4.dp)
     ) {
+        if (isBestSeller) {
+            Text(
+                text = "BestSeller",
+                fontSize = textSize,
+                color = Orange500,
+                style = baseTextStyle,
+                fontWeight = FontWeight.Medium
+            )
+        }
+
         Text(
             text = name,
             fontSize = textSize,
@@ -79,7 +91,8 @@ fun GoodInfoPreview() {
             name = "Nike Everyday Plus Cushioned",
             description = "Training Ankle Socks (6 Pairs)",
             colorNum = "1 Color",
-            price = "US$185"
+            price = "US$185",
+            isBestSeller = true
         )
     }
 }

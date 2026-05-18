@@ -26,9 +26,9 @@ import kr.co.umc.nike.ui.theme.NikeTheme
  * @param onTabSelected 탭이 클릭되었을 때 호출되는 콜백 함수로, 클릭된 탭의 인덱스를 전달합니다.
  */
 @Composable
-fun TobBar(
-    currentTabIndex: Int,
+fun TopBar(
     tabs: List<String>,
+    currentTabIndex: Int,
     onTabSelected: (Int) -> Unit
 ) {
     ScrollableTabRow(
@@ -70,9 +70,9 @@ fun TobBar(
 
 @Preview(showBackground = true)
 @Composable
-fun TobBarPreview() {
+fun TopBarPreview() {
     NikeTheme {
-        TobBar(
+        TopBar(
             currentTabIndex = 0,
             tabs = listOf("전체", "Tops&T-Shirts", "Shoes"),
             onTabSelected = {}

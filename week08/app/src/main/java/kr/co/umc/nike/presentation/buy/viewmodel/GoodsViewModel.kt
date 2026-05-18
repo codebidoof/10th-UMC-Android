@@ -23,7 +23,7 @@ class GoodsViewModel @Inject constructor(
 ): ViewModel() {
 
     private val _goodsState = MutableStateFlow<UiState<List<Good>>>(UiState.Idle)
-    val goodsState: Flow<UiState<List<Good>>> = _goodsState.asStateFlow()
+    val goodsState = _goodsState.asStateFlow()
 
     init {
         loadGoods()
