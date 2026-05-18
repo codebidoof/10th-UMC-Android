@@ -3,6 +3,7 @@ package kr.co.umc.nike.presentation.buy.component
 import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
@@ -45,7 +46,8 @@ fun GoodsGrid(
         ) { good ->
             GoodCard(
                 good = good,
-                onHeartClicked = onHeartClicked
+                onHeartClicked = onHeartClicked,
+                modifier = Modifier.fillMaxWidth()
             )
         }
     }

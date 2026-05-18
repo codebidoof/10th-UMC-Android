@@ -7,7 +7,9 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
@@ -29,12 +31,16 @@ import kr.co.umc.nike.ui.theme.Orange500
 @Composable
 fun GoodCard(
     good: Good,
-    onHeartClicked: (Int) -> Unit
+    onHeartClicked: (Int) -> Unit,
+    modifier: Modifier = Modifier
 ) {
     Column(
+        modifier = modifier
     ) {
         Box(
-            modifier = Modifier.size(160.dp)
+            modifier = Modifier
+                .fillMaxWidth()
+                .aspectRatio(1f)
         ) {
             Image(
                 painter = painterResource(good.goodImage),
