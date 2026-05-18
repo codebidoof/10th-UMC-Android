@@ -37,7 +37,7 @@ fun NewGoodCard(
             fontWeight = FontWeight.Bold
         )
 
-        Spacer(Modifier.height(16.dp))
+        Spacer(Modifier.height(12.dp))
 
         Text(
             text = good.goodPrice,
