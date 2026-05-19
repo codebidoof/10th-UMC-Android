@@ -20,14 +20,14 @@ sealed class UiState<out T> {
  * DSL 기반 방식을 사용하여 각 상태에 맞는 Composable 컴포넌트를 렌더링할 수 있습니다.
  *
  * @param T [UiState]에 포함된 데이터의 타입입니다.
- * @param block [UiStateDsl]을 통해 각 상태별 UI 로직을 정의하는 람다 블록입니다.
+ * @param block [UiStateHandler]을 통해 각 상태별 UI 로직을 정의하는 람다 블록입니다.
  */
 @Suppress("ComposableNaming")
 @Composable
 inline fun <T> UiState<T>.consume(
-    block: UiStateDsl<T>.() -> Unit
+    block: UiStateHandler<T>.() -> Unit
 ) {
-    UiStateDsl<T>()
+    UiStateHandler<T>()
         .apply(block)
         .render(this)
 }

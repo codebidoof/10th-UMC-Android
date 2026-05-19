@@ -81,7 +81,7 @@ private fun ProfileContent(
                     }
 
                     error {
-                        /* TODO: 에러 처리*/
+                        /* TODO: 에러 처리 */
                     }
                 }
             }

@@ -10,7 +10,7 @@ import androidx.compose.runtime.Composable
  *
  * @param T [UiState.Success] 상태일 때 전달받는 데이터의 타입입니다.
  */
-class UiStateDsl<T> {
+class UiStateHandler<T> {
 
     private var idleBlock: (@Composable () -> Unit)? = null
     private var loadingBlock: (@Composable () -> Unit)? = null
