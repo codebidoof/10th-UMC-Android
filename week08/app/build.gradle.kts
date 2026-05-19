@@ -99,6 +99,7 @@ dependencies {
     //coil
     implementation(libs.coil)
     implementation(libs.coil.network.okhttp)
+    implementation(libs.coil.compose)
 
     //Compose
     implementation(platform(libs.compose.bom))

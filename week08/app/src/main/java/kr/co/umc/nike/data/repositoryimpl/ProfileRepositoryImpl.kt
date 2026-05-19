@@ -4,7 +4,7 @@ import kr.co.umc.nike.data.api.ProfileApiService
 import kr.co.umc.nike.data.mapper.DtoMapper.toProfile
 import kr.co.umc.nike.data.util.toResult
 import kr.co.umc.nike.domain.repository.ProfileRepository
-import kr.co.umc.nike.presentation.profile.model.Profile
+import kr.co.umc.nike.domain.entity.Profile
 import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(

@@ -7,7 +7,7 @@ import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 import kr.co.umc.nike.domain.repository.ProfileRepository
-import kr.co.umc.nike.presentation.profile.model.Profile
+import kr.co.umc.nike.domain.entity.Profile
 import kr.co.umc.nike.presentation.util.UiState
 import javax.inject.Inject
 
