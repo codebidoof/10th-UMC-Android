@@ -33,6 +33,11 @@ class UiStateHandler<T> {
         errorBlock = block
     }
 
+    /**
+     * 현재 [UiState]의 상태에 따라 미리 정의된 UI 블록을 실행하여 화면을 렌더링합니다.
+     *
+     * @param state 처리할 현재 UI 상태입니다.
+     */
     @Suppress("ComposableNaming")
     @Composable
     fun render(state: UiState<T>) {
