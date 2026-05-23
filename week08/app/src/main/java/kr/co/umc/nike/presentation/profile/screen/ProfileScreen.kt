@@ -1,13 +1,16 @@
 package kr.co.umc.nike.presentation.profile.screen
 
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentWidth
+import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
@@ -15,6 +18,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
@@ -22,8 +26,12 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import kr.co.umc.nike.presentation.profile.component.UserInfoSection
 import kr.co.umc.nike.domain.entity.Profile
 import kr.co.umc.nike.presentation.bag.component.MenuBar
+import kr.co.umc.nike.presentation.profile.component.BenefitSection
+import kr.co.umc.nike.presentation.profile.component.BottomBar
 import kr.co.umc.nike.presentation.profile.component.EditButton
+import kr.co.umc.nike.presentation.profile.component.FollowingBar
 import kr.co.umc.nike.presentation.profile.component.HorizontalDivider
+import kr.co.umc.nike.presentation.profile.component.ImageGallery
 import kr.co.umc.nike.presentation.profile.model.Menu
 import kr.co.umc.nike.presentation.profile.viewmodel.ProfileViewModel
 import kr.co.umc.nike.presentation.util.UiState
@@ -104,6 +112,49 @@ private fun ProfileContent(
         Spacer(Modifier.height(24.dp))
 
         HorizontalDivider()
+
+        BenefitSection(
+            "나이키 멤버 혜택",
+            "0개 사용 가능",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 24.dp,vertical = 32.dp)
+        )
+
+        HorizontalDivider()
+
+        FollowingBar(
+            "팔로잉 (5)",
+            "편집",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 24.dp, vertical = 28.dp)
+        )
+
+        // 이미지 리스트
+        profileState.consume {
+            loading {
+
+            }
+
+            success {
+                ImageGallery(
+                    profiles = it.drop(1),
+                    modifier = Modifier.fillMaxWidth()
+                )
+            }
+        }
+
+        Spacer(Modifier.height(116.dp))
+
+        BottomBar(
+            text = "회원 가입일: 2025년 9월",
+            modifier = Modifier.fillMaxSize()
+                .background(Color.LightGray)
+                .padding(horizontal = 4.dp, vertical = 18.dp)
+        )
+
+        Spacer(Modifier.height(12.dp))
     }
 }
 
