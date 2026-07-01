@@ -28,24 +28,28 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "omteam.android.application"
-            implementationClass = "AndroidApplicationConventionPlugin"
+            id = "mky.android.application"
+            implementationClass = "kr.co.mky.convention.AndroidApplicationConventionPlugin"
         }
+
         register("androidLibrary") {
-            id = "omteam.android.library"
-            implementationClass = "AndroidLibraryConventionPlugin"
+            id = "mky.android.library"
+            implementationClass = "kr.co.mky.convention.AndroidLibraryConventionPlugin"
         }
+
         register("androidCompose") {
-            id = "omteam.android.compose"
-            implementationClass = "AndroidComposeConventionPlugin"
+            id = "mky.android.compose"
+            implementationClass = "kr.co.mky.convention.AndroidComposeConventionPlugin"
         }
+
         register("androidHilt") {
-            id = "omteam.android.hilt"
-            implementationClass = "AndroidHiltConventionPlugin"
+            id = "mky.android.hilt"
+            implementationClass = "kr.co.mky.convention.AndroidHiltConventionPlugin"
         }
+
         register("kotlinLibrary") {
-            id = "omteam.kotlin.library"
-            implementationClass = "KotlinLibraryConventionPlugin"
+            id = "mky.kotlin.library"
+            implementationClass = "kr.co.mky.convention.KotlinLibraryConventionPlugin"
         }
     }
 }
