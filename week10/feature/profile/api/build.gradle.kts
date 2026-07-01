@@ -1,31 +1,20 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.android.built.in1.kotlin)
+    id("mky.android.library")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "kr.co.mky.api"
-    compileSdk {
-        version = release(36)
-    }
-
-    defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
+    compileSdk = 36
 }
 
 dependencies {
-    implementation(libs.androidx.appcompat)
+    // TODO: NAV3 추가
+    //
+    implementation(libs.kotlinx.serialization.json)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.material)
+
+    // test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)

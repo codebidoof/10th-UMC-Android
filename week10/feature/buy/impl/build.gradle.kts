@@ -1,31 +1,32 @@
 plugins {
-    alias(libs.plugins.android.library)
-    alias(libs.plugins.android.built.in1.kotlin)
+    id("mky.android.library")
+    id("mky.android.compose")
+    id("mky.android.hilt")
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
     namespace = "kr.co.mky.impl"
-    compileSdk {
-        version = release(36)
-    }
-
-    defaultConfig {
-        minSdk = 24
-
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_11
-        targetCompatibility = JavaVersion.VERSION_11
-    }
-
+    compileSdk = 36
 }
 
 dependencies {
-    implementation(libs.androidx.appcompat)
+    implementation(project(":feature:buy:api"))
+
+    // core 모듈
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:domain"))
+
+    // compose
+    implementation(libs.compose.activity)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.material)
+    implementation(libs.hilt.navigation.compose)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
+    implementation(libs.lifecycle.viewmodel.compose)
+
+    // TODO: nav3
+
+    // test
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
