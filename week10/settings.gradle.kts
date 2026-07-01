@@ -21,4 +21,14 @@ dependencyResolutionManagement {
 
 rootProject.name = "Nike"
 include(":app")
- 
+include(":core:domain")
+include(":core:network")
+include(":core:data")
+include(":core:database")
+include(":core:designsystem")
+include(":feature:home")
+include(":feature:buy")
+include(":feature:bag")
+include(":feature:profile")
+include(":feature:wishlist")
+include(":build-logic")

@@ -115,4 +115,6 @@ dependencies {
     implementation(libs.kotlinx.serialization.json)
     implementation(libs.lifecycle.viewmodel.compose)
 
+    //Modules
+
 }
