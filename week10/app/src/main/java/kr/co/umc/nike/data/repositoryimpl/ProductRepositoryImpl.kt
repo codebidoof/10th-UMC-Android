@@ -1,17 +1,20 @@
 package kr.co.umc.nike.data.repositoryimpl
 
-import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 import kr.co.umc.nike.data.data_source.local.LocalDataSource
 import kr.co.umc.nike.data.mapper.DtoMapper.toDomain
+import kr.co.umc.nike.di.Dispatcher
+import kr.co.umc.nike.di.NikeDispatchers
 import kr.co.umc.nike.domain.entity.ProductSummary
 import kr.co.umc.nike.domain.repository.ProductRepository
 import javax.inject.Inject
 
 class ProductRepositoryImpl @Inject constructor(
-    private val localDataSource: LocalDataSource
+    private val localDataSource: LocalDataSource,
+    @param:Dispatcher(NikeDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
 ) : ProductRepository {
     override fun getAllProducts(): Flow<List<ProductSummary>> {
         return localDataSource.getAllProducts()
@@ -42,7 +45,7 @@ class ProductRepositoryImpl @Inject constructor(
     }
 
     override suspend fun updateWishStatus(id: Int) {
-        withContext(Dispatchers.IO) {
+        withContext(ioDispatcher) {
             localDataSource.updateWishStatus(id)
         }
     }
