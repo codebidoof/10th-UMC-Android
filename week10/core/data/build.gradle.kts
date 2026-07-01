@@ -12,6 +12,7 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:network"))
     implementation(project(":core:database"))
+    implementation(project(":core:common"))
 
     // android 의존성
     implementation(libs.androidx.core.ktx)
