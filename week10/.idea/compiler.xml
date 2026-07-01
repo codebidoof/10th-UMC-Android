@@ -5,6 +5,7 @@
       <module name="Nike.buy" target="21" />
       <module name="Nike.core.mylibrary" target="21" />
       <module name="Nike.data" target="21" />
+      <module name="Nike.feature.profile.api.impl" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

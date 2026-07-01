@@ -34,6 +34,8 @@ configure<ApplicationExtension> {
 }
 
 dependencies {
+
+    // feature 모듈
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -50,12 +52,6 @@ dependencies {
     // Navigation
     implementation(libs.navigation.fragment.ktx)
     implementation(libs.navigation.ui.ktx)
-
-    // Hilt
-    implementation(libs.hilt)
-    ksp(libs.hilt.compiler)
-    androidTestImplementation(libs.androidx.ui.test.junit4)
-    debugImplementation(libs.androidx.ui.test.manifest)
 
     // Timber
     implementation(libs.timber)
