@@ -36,6 +36,24 @@ configure<ApplicationExtension> {
 dependencies {
 
     // feature 모듈
+    implementation(project(":feature:home:api"))
+    implementation(project(":feature:home:impl"))
+    implementation(project(":feature:buy:api"))
+    implementation(project(":feature:buy:impl"))
+    implementation(project(":feature:wishlist:api"))
+    implementation(project(":feature:wishlist:impl"))
+    implementation(project(":feature:bag:api"))
+    implementation(project(":feature:bag:impl"))
+    implementation(project(":feature:profile:api"))
+    implementation(project(":feature:profile:impl"))
+
+    // core 모듈
+    implementation(project(":core:designsystem"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:data"))
+    implementation(project(":core:database"))
+
+    // 필수 의존성
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -55,11 +73,6 @@ dependencies {
 
     // Timber
     implementation(libs.timber)
-
-    // Room
-    implementation(libs.room.runtime)
-    implementation(libs.room.ktx)
-    ksp(libs.room.compiler)
 
     // Retrofit
     implementation(libs.retrofit)
