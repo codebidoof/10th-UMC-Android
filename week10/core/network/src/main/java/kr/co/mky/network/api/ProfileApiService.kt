@@ -1,7 +1,8 @@
-package kr.co.umc.nike.data.api
+package kr.co.mky.network.api
 
-import kr.co.umc.nike.data.model.response.ResReqResponse
-import kr.co.umc.nike.data.model.response.User
+
+import kr.co.mky.network.model.response.ResReqResponse
+import kr.co.mky.network.model.response.User
 import retrofit2.http.GET
 
 interface ProfileApiService {

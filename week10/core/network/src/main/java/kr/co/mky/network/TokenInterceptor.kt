@@ -1,4 +1,4 @@
-package kr.co.umc.nike.data.util
+package kr.co.mky.network
 
 import okhttp3.Interceptor
 import okhttp3.Response

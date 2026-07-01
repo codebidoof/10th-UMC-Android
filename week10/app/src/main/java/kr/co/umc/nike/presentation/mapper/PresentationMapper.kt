@@ -1,6 +1,6 @@
 package kr.co.umc.nike.presentation.mapper
 
-import kr.co.umc.nike.domain.entity.ProductSummary
+import kr.co.mky.domain.entity.ProductSummary
 import kr.co.umc.nike.presentation.buy.model.Good
 import kr.co.umc.nike.presentation.home.model.NewGood
 import kr.co.umc.nike.presentation.wish.model.WishGood

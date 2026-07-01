@@ -1,12 +1,11 @@
-package kr.co.umc.nike.di
+package kr.co.mky.network
 
 import com.google.gson.GsonBuilder
+import kr.co.mky.network.BuildConfig
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kr.co.umc.nike.BuildConfig
-import kr.co.umc.nike.data.util.TokenInterceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit

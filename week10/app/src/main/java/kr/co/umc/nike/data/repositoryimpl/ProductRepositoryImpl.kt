@@ -8,8 +8,8 @@ import kr.co.umc.nike.data.data_source.local.room.dao.ProductDao
 import kr.co.umc.nike.data.mapper.DtoMapper.toDomain
 import kr.co.umc.nike.di.Dispatcher
 import kr.co.umc.nike.di.NikeDispatchers
-import kr.co.umc.nike.domain.entity.ProductSummary
-import kr.co.umc.nike.domain.repository.ProductRepository
+import kr.co.mky.domain.entity.ProductSummary
+import kr.co.mky.domain.repository.ProductRepository
 import javax.inject.Inject
 
 class ProductRepositoryImpl @Inject constructor(

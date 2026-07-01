@@ -1,4 +1,4 @@
-package kr.co.umc.nike.domain.entity
+package kr.co.mky.domain.entity
 
 data class Profile(
     val id: Int,

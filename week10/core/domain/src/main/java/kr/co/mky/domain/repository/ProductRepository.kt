@@ -1,7 +1,7 @@
-package kr.co.umc.nike.domain.repository
+package kr.co.mky.domain.repository
 
 import kotlinx.coroutines.flow.Flow
-import kr.co.umc.nike.domain.entity.ProductSummary
+import kr.co.mky.domain.entity.ProductSummary
 
 interface ProductRepository {
 

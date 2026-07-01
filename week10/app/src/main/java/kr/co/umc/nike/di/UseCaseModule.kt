@@ -4,11 +4,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import kr.co.umc.nike.domain.repository.ProductRepository
-import kr.co.umc.nike.domain.usecase.GetAllProductsUseCase
-import kr.co.umc.nike.domain.usecase.GetNewProductsUseCase
-import kr.co.umc.nike.domain.usecase.GetWishProductsUseCase
-import kr.co.umc.nike.domain.usecase.UpdateWishStatusUseCase
+import kr.co.mky.domain.repository.ProductRepository
+import kr.co.mky.domain.usecase.GetAllProductsUseCase
+import kr.co.mky.domain.usecase.GetNewProductsUseCase
+import kr.co.mky.domain.usecase.GetWishProductsUseCase
+import kr.co.mky.domain.usecase.UpdateWishStatusUseCase
 import javax.inject.Singleton
 
 @Module

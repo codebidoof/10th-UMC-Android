@@ -1,6 +1,6 @@
-package kr.co.umc.nike.domain.repository
+package kr.co.mky.domain.repository
 
-import kr.co.umc.nike.domain.entity.Profile
+import kr.co.mky.domain.entity.Profile
 
 interface ProfileRepository {
     suspend fun getFollowingUsers(): Result<List<Profile>>

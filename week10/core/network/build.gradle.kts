@@ -1,4 +1,3 @@
-import com.android.build.api.dsl.ApplicationExtension
 import java.util.Properties
 import kotlin.apply
 
@@ -14,9 +13,6 @@ val localProperties = Properties().apply {
 
 android {
     namespace = "kr.co.mky.network"
-    compileSdk {
-        version = release(36)
-    }
 
     defaultConfig {
         val baseUrl = localProperties.getProperty("BASE_URL")

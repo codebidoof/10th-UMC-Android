@@ -2,9 +2,9 @@ package kr.co.umc.nike.data.mapper
 
 import kr.co.umc.nike.data.data_source.local.room.entity.ProductEntity
 import kr.co.umc.nike.data.model.response.User
-import kr.co.umc.nike.domain.entity.ProductCategory
-import kr.co.umc.nike.domain.entity.ProductSummary
-import kr.co.umc.nike.domain.entity.Profile
+import kr.co.mky.domain.entity.ProductCategory
+import kr.co.mky.domain.entity.ProductSummary
+import kr.co.mky.domain.entity.Profile
 
 /**
  * Data Layer ↔ Domain Layer 변환 Mapper

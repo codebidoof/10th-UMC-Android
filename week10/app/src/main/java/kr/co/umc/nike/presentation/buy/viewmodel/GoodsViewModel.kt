@@ -8,8 +8,8 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import kr.co.umc.nike.domain.usecase.GetAllProductsUseCase
-import kr.co.umc.nike.domain.usecase.UpdateWishStatusUseCase
+import kr.co.mky.domain.usecase.GetAllProductsUseCase
+import kr.co.mky.domain.usecase.UpdateWishStatusUseCase
 import kr.co.umc.nike.presentation.mapper.PresentationMapper.toGood
 import kr.co.umc.nike.presentation.util.UiState
 import kr.co.umc.nike.presentation.buy.model.Good

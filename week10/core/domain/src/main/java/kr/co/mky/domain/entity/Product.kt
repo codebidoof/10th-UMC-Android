@@ -1,4 +1,4 @@
-package kr.co.umc.nike.domain.entity
+package kr.co.mky.domain.entity
 
 /**
  * 상품 상세 정보 도메인 엔티티

@@ -1,4 +1,4 @@
-package kr.co.umc.nike.data.model.response
+package kr.co.mky.network.model.response
 
 import com.google.gson.annotations.SerializedName
 

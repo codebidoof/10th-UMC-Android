@@ -6,8 +6,8 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import kr.co.umc.nike.data.repositoryimpl.ProductRepositoryImpl
 import kr.co.umc.nike.data.repositoryimpl.ProfileRepositoryImpl
-import kr.co.umc.nike.domain.repository.ProductRepository
-import kr.co.umc.nike.domain.repository.ProfileRepository
+import kr.co.mky.domain.repository.ProductRepository
+import kr.co.mky.domain.repository.ProfileRepository
 import javax.inject.Singleton
 
 @Module

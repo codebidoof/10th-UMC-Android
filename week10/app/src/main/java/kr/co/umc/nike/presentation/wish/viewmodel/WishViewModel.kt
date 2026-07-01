@@ -2,14 +2,13 @@ package kr.co.umc.nike.presentation.wish.viewmodel
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.flow.Flow
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.launch
-import kr.co.umc.nike.domain.usecase.GetWishProductsUseCase
+import kr.co.mky.domain.usecase.GetWishProductsUseCase
 import kr.co.umc.nike.presentation.mapper.PresentationMapper.toWishGood
 import kr.co.umc.nike.presentation.util.UiState
 import kr.co.umc.nike.presentation.wish.model.WishGood
