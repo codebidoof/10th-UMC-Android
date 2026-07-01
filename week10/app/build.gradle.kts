@@ -3,6 +3,7 @@ import java.util.Properties
 
 plugins {
     id("mky.android.application")
+    id("mky.android.compose")
     id("mky.android.hilt")
 }
 
