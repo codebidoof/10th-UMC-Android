@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.SubcomposeAsyncImage
 import kr.co.mky.domain.entity.Profile
 import kr.co.umc.nike.presentation.util.shimmerEffect
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun ImageGallery(

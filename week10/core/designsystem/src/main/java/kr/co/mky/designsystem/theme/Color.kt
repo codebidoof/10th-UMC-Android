@@ -1,4 +1,4 @@
-package kr.co.umc.nike.ui.theme
+package kr.co.mky.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 

@@ -8,8 +8,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import kr.co.umc.nike.ui.theme.CustomGray
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.CustomGray
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun FollowingBar(

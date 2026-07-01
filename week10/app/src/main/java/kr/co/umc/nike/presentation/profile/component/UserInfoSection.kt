@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import coil3.compose.AsyncImage
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 import kr.co.mky.domain.entity.Profile
 import kr.co.umc.nike.presentation.util.shimmerEffect
 

@@ -1,20 +1,17 @@
 package kr.co.umc.nike.presentation.buy.component
 
-import android.content.res.Configuration
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kr.co.umc.nike.R
 import kr.co.umc.nike.presentation.buy.model.Good
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun GoodsGrid(

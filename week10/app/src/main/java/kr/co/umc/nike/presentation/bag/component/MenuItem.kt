@@ -14,7 +14,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import kr.co.umc.nike.R
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun MenuItem(

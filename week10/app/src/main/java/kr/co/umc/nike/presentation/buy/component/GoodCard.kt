@@ -1,7 +1,6 @@
 package kr.co.umc.nike.presentation.buy.component
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.layout.Box
@@ -13,7 +12,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -25,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import kr.co.umc.nike.R
 import kr.co.umc.nike.presentation.GoodInfo
 import kr.co.umc.nike.presentation.buy.model.Good
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun GoodCard(

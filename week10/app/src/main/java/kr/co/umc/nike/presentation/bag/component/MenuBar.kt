@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import kr.co.umc.nike.presentation.profile.component.VerticalDivider
 import kr.co.umc.nike.presentation.profile.model.Menu
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 /**
  * 구분선으로 구분된 메뉴 항목 목록을 표시하는 가로 바입니다.

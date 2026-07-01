@@ -18,7 +18,7 @@ import kr.co.umc.nike.presentation.wish.component.Title
 import kr.co.umc.nike.presentation.wish.component.WishGoodCard
 import kr.co.umc.nike.presentation.wish.model.WishGood
 import kr.co.umc.nike.presentation.wish.viewmodel.WishViewModel
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun WishScreen(

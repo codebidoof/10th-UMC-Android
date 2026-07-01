@@ -11,7 +11,7 @@ import androidx.compose.ui.unit.dp
 import kr.co.umc.nike.R
 import kr.co.umc.nike.presentation.bag.component.BottomActionButton
 import kr.co.umc.nike.presentation.bag.component.NonePlaceHolder
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun BagScreen(

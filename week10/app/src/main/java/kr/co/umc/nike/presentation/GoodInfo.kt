@@ -13,10 +13,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import kr.co.umc.nike.ui.theme.Black
-import kr.co.umc.nike.ui.theme.CustomGray
-import kr.co.umc.nike.ui.theme.NikeTheme
-import kr.co.umc.nike.ui.theme.Orange500
+import kr.co.mky.designsystem.theme.Black
+import kr.co.mky.designsystem.theme.CustomGray
+import kr.co.mky.designsystem.theme.NikeTheme
+import kr.co.mky.designsystem.theme.Orange500
 
 @Composable
 fun GoodInfo(

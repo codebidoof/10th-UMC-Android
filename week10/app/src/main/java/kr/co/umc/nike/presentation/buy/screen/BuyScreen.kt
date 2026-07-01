@@ -5,7 +5,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.pager.HorizontalPager
 import androidx.compose.foundation.pager.rememberPagerState
 import androidx.compose.runtime.Composable
@@ -24,7 +23,7 @@ import kr.co.umc.nike.presentation.buy.model.Good
 import kr.co.umc.nike.presentation.buy.viewmodel.GoodsViewModel
 import kr.co.umc.nike.presentation.util.UiState
 import kr.co.umc.nike.presentation.util.consume
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun BuyScreen(

@@ -1,6 +1,7 @@
 package kr.co.mky.data.repositoryimpl
 
 import kr.co.mky.data.mapper.DtoMapper.toProfile
+import kr.co.mky.data.util.toResult
 import kr.co.mky.domain.repository.ProfileRepository
 import kr.co.mky.domain.entity.Profile
 import kr.co.mky.network.api.ProfileApiService

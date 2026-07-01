@@ -1,4 +1,4 @@
-package kr.co.umc.nike.ui.theme
+package kr.co.mky.designsystem.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

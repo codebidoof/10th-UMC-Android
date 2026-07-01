@@ -35,7 +35,7 @@ import kr.co.umc.nike.presentation.profile.model.Menu
 import kr.co.umc.nike.presentation.profile.viewmodel.ProfileViewModel
 import kr.co.umc.nike.presentation.util.UiState
 import kr.co.umc.nike.presentation.util.consume
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 @Composable
 fun ProfileScreen(

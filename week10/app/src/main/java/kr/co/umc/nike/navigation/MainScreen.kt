@@ -9,7 +9,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import kr.co.umc.nike.R
 import kr.co.umc.nike.navigation.model.BottomBarItem
 import kr.co.umc.nike.navigation.route.AppGraph
 import kr.co.umc.nike.navigation.route.MainDestination
@@ -18,7 +17,7 @@ import kr.co.umc.nike.navigation.util.NavTransaction.fadeOutTransition
 import kr.co.umc.nike.navigation.util.mainGraph
 import kr.co.umc.nike.navigation.util.navigateToBottomBarDestination
 import kr.co.umc.nike.navigation.util.toMainDestination
-import kr.co.umc.nike.ui.theme.NikeTheme
+import kr.co.mky.designsystem.theme.NikeTheme
 
 /**
  * 나이키 애플리케이션의 최상위(루트) 컴포저블 함수입니다.
